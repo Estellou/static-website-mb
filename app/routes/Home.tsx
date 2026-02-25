@@ -19,7 +19,7 @@ export default function Home() {
           <Hero
             title={translations.hero.title}
             text={interpolate(translations.hero.text, { companyName: CONTACT.companyName })}
-            primaryCta={{ label: translations.hero.primaryCta, link: '/contact' }}
+            primaryCta={{ label: translations.hero.primaryCta, link: '#contact' }}
             secondaryCta={{ label: translations.hero.secondaryCta, link: '#contact' }}
             img={{ src: '', alt: interpolate(translations.hero.imgAlt, { companyName: CONTACT.companyName }) }}
           />
@@ -41,10 +41,10 @@ export default function Home() {
           <Projects
             title={translations.projects.title}
             projects={[
-              { img: { src: '', alt: translations.projects.kitchen.imgAlt },  title: translations.projects.kitchen.title,  link: '/contact?projectType=kitchen' },
-              { img: { src: '', alt: translations.projects.bookcase.imgAlt }, title: translations.projects.bookcase.title, link: '/contact?projectType=bookcase' },
-              { img: { src: '', alt: translations.projects.wardrobe.imgAlt }, title: translations.projects.wardrobe.title, link: '/contact?projectType=wardrobe' },
-              { img: { src: '', alt: translations.projects.other.imgAlt },    title: translations.projects.other.title,    link: '/contact?projectType=other' },
+              { img: { src: '', alt: translations.projects.kitchen.imgAlt },  title: translations.projects.kitchen.title },
+              { img: { src: '', alt: translations.projects.bookcase.imgAlt }, title: translations.projects.bookcase.title },
+              { img: { src: '', alt: translations.projects.wardrobe.imgAlt }, title: translations.projects.wardrobe.title },
+              { img: { src: '', alt: translations.projects.other.imgAlt },    title: translations.projects.other.title },
             ]}
           />
         </section>
@@ -64,7 +64,7 @@ export default function Home() {
             text={translations.contactUs.text}
             imgPosition="right"
             img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
-            cta={{ label: translations.contactUs.cta, link: '/contact' }}
+            cta={{ label: translations.contactUs.cta, link: '#contact' }}
           >
             <HorizontalContact
               items={[

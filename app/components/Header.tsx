@@ -32,12 +32,12 @@ export default function Header() {
           <a href="#contact" className="text-sm text-gray-500 hover:text-black transition-colors">
             {translations.nav.contact}
           </a>
-          <Link
-            to="/contact"
+          <a
+            href="#contact"
             className="inline-block bg-black text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition-colors"
           >
             {translations.cta}
-          </Link>
+          </a>
         </nav>
 
         {/* Hamburger button */}
@@ -70,13 +70,13 @@ export default function Header() {
           >
             {translations.nav.contact}
           </a>
-          <Link
-            to="/contact"
+          <a
+            href="#contact"
             className="inline-block bg-black text-white px-6 py-3 text-sm font-medium text-center hover:bg-gray-800 transition-colors mt-2"
             onClick={() => setMenuOpen(false)}
           >
             {translations.cta}
-          </Link>
+          </a>
         </nav>
       )}
     </header>
