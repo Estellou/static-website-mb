@@ -2,6 +2,7 @@ import { Ruler, PenTool, Hammer, Wrench } from 'lucide-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
+import Projects from '../components/Projects'
 import ContentMedia from '../components/ContentMedia'
 
 export default function Home() {
@@ -30,7 +31,19 @@ export default function Home() {
           />
         </section>
 
-        {/* id="projects" and id="story" reserved for future slices */}
+        <section id="projects">
+          <Projects
+            title="Nos réalisations"
+            projects={[
+              { img: { src: '', alt: 'Cuisine sur mesure' }, title: 'Cuisine', link: '/contact?projectType=cuisine' },
+              { img: { src: '', alt: 'Bibliothèque sur mesure' }, title: 'Bibliothèque', link: '/contact?projectType=bibliotheque' },
+              { img: { src: '', alt: 'Dressing sur mesure' }, title: 'Dressing', link: '/contact?projectType=dressing' },
+              { img: { src: '', alt: 'Autres réalisations' }, title: 'Autres', link: '/contact?projectType=autres' },
+            ]}
+          />
+        </section>
+
+        {/* id="story" reserved for slice 5 */}
 
         <section id="contact">
           <ContentMedia
