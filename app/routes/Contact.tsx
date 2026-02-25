@@ -1,7 +1,26 @@
+import { useSearchParams } from 'react-router-dom'
+import Header from '../components/Header'
+import Form from '../components/Form'
+import ContentMedia from '../components/ContentMedia'
+
 export default function Contact() {
+  const [searchParams] = useSearchParams()
+  const projectType = searchParams.get('projectType') ?? 'autres'
+
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white">
-      <h1 className="text-4xl font-bold text-black">Contact</h1>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Form defaultProjectType={projectType} />
+        <section id="contact">
+          <ContentMedia
+            title="Parlons de votre projet"
+            text="Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au 06 00 00 00 00 ou via notre formulaire ci-dessus. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais."
+            imgPosition="right"
+            img={{ src: '', alt: 'Contactez Menuiserie Belmonte' }}
+          />
+        </section>
+      </main>
+    </>
   )
 }
