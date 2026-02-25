@@ -31,11 +31,16 @@ npm run dev
 
 ```
 app/
-  components/    # Reusable UI components
-  routes/        # Pages (Home, Contact)
-  icons/         # Custom SVG icons
-  images/        # Image assets
-  styles/        # Theme, CSS variables, global styles
+  components/      # Reusable UI components
+  routes/          # Pages (Home, Contact)
+  data/
+    contact.ts     # CONTACT constant — companyName, phoneNumber, email
+  translations/
+    fr.json        # All French UI copy (structure: page.block.prop)
+    index.ts       # Exports fr and interpolate() utility
+  icons/           # Custom SVG icons
+  images/          # Image assets
+  styles/          # Theme, CSS variables, global styles
 docs/
   plan/
     rollout-plan.md   # Delivery slices history and decisions
@@ -51,6 +56,27 @@ Colors and fonts are defined via central CSS variables in `app/styles/global.css
 No hardcoded color or font values outside the theme system.
 
 Style: classic black and white.
+
+---
+
+## Content and translations
+
+All French UI copy lives in `app/translations/fr.json`, structured as `page.block.prop`:
+
+```ts
+import { fr, interpolate } from '../translations'
+import { CONTACT } from '../data/contact'
+
+const translations = fr.home
+
+// Static string
+translations.hero.title
+
+// With runtime value
+interpolate(translations.contactUs.text, { phoneNumber: CONTACT.phoneNumber })
+```
+
+Contact info (company name, phone, email) is defined once in `app/data/contact.ts`.
 
 ---
 

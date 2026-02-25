@@ -173,6 +173,25 @@ Living history of all delivery slices: scope, status, and decisions made during 
 
 ---
 
+## Cross-cutting refactors
+
+### Content centralisation
+Two data files introduced outside the slice plan:
+
+**`app/data/contact.ts` — `CONTACT` constant**
+- Holds `companyName`, `phoneNumber`, `email`
+- Single source of truth for all contact info used in UI text
+- Update one file → propagates everywhere
+
+**`app/translations/fr.json` — French content**
+- All UI copy defined under `header.*`, `home.*`, `contact.*`
+- Structure: `[page][blockName][prop]` e.g. `home.hero.title`, `contact.form.fields.email.label`
+- Supports `{placeholder}` tokens for runtime values (e.g. `{companyName}`, `{phoneNumber}`)
+- `interpolate(template, vars)` utility in `app/translations/index.ts` handles substitution
+- Translation alias convention: always `const translations = fr.*` (never `t`)
+
+---
+
 ## Global decisions
 
 | Decision | Detail |
@@ -185,3 +204,6 @@ Living history of all delivery slices: scope, status, and decisions made during 
 | Logo format | PNG with white background — transparency to be addressed in a future iteration |
 | Language | French (website content only) |
 | Code & docs language | English |
+| Content | All French copy in `app/translations/fr.json` |
+| Contact info | Centralised in `app/data/contact.ts` |
+| Translation alias | `const translations = fr.*` — never `const t` |
