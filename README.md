@@ -112,7 +112,7 @@ See [`docs/plan/rollout-plan.md`](docs/plan/rollout-plan.md) for the full slice 
 
 | # | Slice | Status |
 |---|---|---|
-| 10 | Contact page: Header + Form (sends email) + Contact block | To do |
+| 10 | Contact page: Header + Form (sends email) + Contact block | Done |
 | 11 | Header: links to Home, contact anchor, start project | To do |
 | 12 | Home: Projects linked to `/contact?projectType=xxx` | To do |
 

@@ -135,12 +135,24 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ## V1
 
 ### Slice 10 — Contact page: form + contact block
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Contact page with Header, Form, and ContentMedia contact block
 - Form fields: first name, last name, company, project type (select), description
 - Form submission sends an email to the company
+
+**Decisions:**
+- Email service: **Formspree** (no backend, free tier 50 submissions/month)
+- Endpoint stored in `VITE_FORMSPREE_ENDPOINT` env variable — see `.env.example`
+- Fields added beyond original spec: **email** (required) and **phone** (required)
+- companyName is optional
+- description requires minimum **100 words** — live word count shown below the field
+- description has placeholder text to guide the user
+- projectType defaults to `autres` if URL param is missing or invalid
+- `?projectType=` URL param read in Contact.tsx via `useSearchParams` — ready for Slice 12
+- Success: inline message replaces the form on successful submission
+- Error: inline error banner shown above the form, form stays editable
 
 ---
 
