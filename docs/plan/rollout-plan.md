@@ -65,13 +65,13 @@ Living history of all delivery slices: scope, status, and decisions made during 
 
 **Scope:**
 - Projects component: left-aligned H3, image grid with H4 subtitles
-- Photos + text, no links yet (interactivity comes in Slice 12)
+- Photos + text, no links
 
 **Decisions:**
 - 4 projects chosen by client: Cuisine · Bibliothèque · Dressing · Autres
 - Responsive grid: 4 columns desktop, 2 tablet, 1 mobile
 - Gray placeholder (`bg-gray-100`) shown when no image `src` provided — real photos added in Slice 8
-- `link` prop stored in project data now with `?projectType=` params ready for Slice 12
+- `link` prop stored in project data with `?projectType=` params (later removed — see Post-V1)
 - H4 labels displayed in uppercase with letter-spacing for clean typographic hierarchy
 
 ---
@@ -149,15 +149,15 @@ Living history of all delivery slices: scope, status, and decisions made during 
 - companyName is optional
 - description requires minimum **100 words** — live word count shown below the field
 - description has placeholder text to guide the user
-- projectType defaults to `autres` if URL param is missing or invalid
-- `?projectType=` URL param read in Contact.tsx via `useSearchParams` — ready for Slice 12
+- projectType defaults to `other` if URL param is missing or invalid
+- `?projectType=` URL param read in Contact.tsx via `useSearchParams`
 - Success: inline message replaces the form on successful submission
 - Error: inline error banner shown above the form, form stays editable
 
 ---
 
 ### Slice 11 — Final header: navigation links
-**Status:** Done
+**Status:** Done *(later revised — see Post-V1)*
 
 **Scope:**
 - Refine header links: Home | Nous contacter (anchor) | Démarrer un projet (→ /contact)
@@ -171,7 +171,7 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 12 — Projects linked to form via URL param
-**Status:** Done
+**Status:** Done *(later reverted — see Post-V1)*
 
 **Scope:**
 - Each project card links to `/contact?projectType=xxx`
@@ -181,6 +181,55 @@ Living history of all delivery slices: scope, status, and decisions made during 
 - Project cards wrapped in React Router `<Link>` with `group` class for hover coordination
 - Hover: image fades to 80% opacity, title gets underline — signals interactivity without heavy decoration
 - `link` prop was already stored in project data (since Slice 4) and `?projectType` already read in Contact.tsx (since Slice 10) — only Projects.tsx needed updating
+
+---
+
+## Post-V1 refinements
+
+### Contact block redesign
+- Added `children?: ReactNode` prop to `ContentMedia` — renders between text and CTA
+- Created `HorizontalContact` component: stacked items, each with icon + grey label + bold value
+- Phone and email displayed via `HorizontalContact` in both Home and Contact contact blocks
+- `home.contactUs.text` and `contact.contactUs.text` updated to remove inline phone number
+- CTA button removed from contact blocks on all views
+
+### Home page: remove /contact links
+- All `/contact` page links removed from home page
+- Hero primary CTA, ContentMedia CTA, Header CTA: `/contact` → `#contact`
+- Project cards reverted to plain non-interactive divs (Slice 12 reverted)
+- Reason: contact form unsatisfactory; lead conversion via phone/email preferred
+
+### Header refinements
+- Nav updated: `Nos prestations` (`#services`) · `Notre histoire` (`#story`) · `Démarrer un projet` CTA (`#contact`)
+- Logo resized to `h-[75px]` (4/3 of previous size)
+- Company name split into two stacked lines ("Menuiserie" / "Belmonte"), matching logo height
+- Gap between logo and text tightened to `gap-1.5`
+
+### Favicon + page title
+- Generated `public/favicon.png` (64×64 circular crop of logo) via `scripts/generate-favicon.mjs` using `sharp`
+- Page title updated from `mb-scaffold` to `Menuiserie Belmonte`
+
+### Sticky header scroll offset
+- Added `scroll-margin-top: 96px` to `section[id]` in global.css
+- Prevents anchor-linked sections from being hidden behind the sticky header
+
+### Mobile layout improvements
+- Services: 2-column grid on mobile (`grid-cols-2`)
+- ContentMedia: vertical padding halved on mobile (`py-5`), gap reduced (`gap-8`)
+- ContentMedia: `items-center` scoped to `md:` only — fixes HorizontalContact invisible on mobile
+- ContentMedia: mobile image rendered between title and text (desktop side column unchanged)
+- ContentMedia: fixed `h-full` inside `aspect-[4/3]` — applied `bg-gray-100`/`object-cover` directly on aspect-ratio element to avoid collapsed placeholder
+- Hero: vertical padding halved on mobile (`py-12`)
+- Projects: bottom padding halved on mobile (`pb-10`)
+- Hero secondary CTA ("Nous contacter") removed
+
+### Copy-to-clipboard on contact items
+- `HorizontalContact` items are now buttons — clicking copies the value to clipboard
+- `Toast` reusable component (`app/components/Toast.tsx`): fixed top-right, `bg-gray-100`, rounded corners, progress bar depleting over 5s, × close button, check icon
+
+### Content and data
+- `fr.json` keys renamed to English: `etudes→studies`, `conception→design`, `realisation→production`, `pose→installation`, `cuisine→kitchen`, `bibliotheque→bookcase`, `dressing→wardrobe`, `autres→other`
+- `app/data/contact.ts` updated with real phone (`06 50 76 80 74`) and email (`estelle.latronico@gmail.com`)
 
 ---
 
@@ -197,12 +246,12 @@ Two data files introduced outside the slice plan:
 **`app/translations/fr.json` — French content**
 - All UI copy defined under `header.*`, `home.*`, `contact.*`
 - Structure: `[page][blockName][prop]` e.g. `home.hero.title`, `contact.form.fields.email.label`
-- Supports `{placeholder}` tokens for runtime values (e.g. `{companyName}`, `{phoneNumber}`)
+- Supports `{placeholder}` tokens for runtime values (e.g. `{companyName}`)
 - `interpolate(template, vars)` utility in `app/translations/index.ts` handles substitution
 - Translation alias convention: always `const translations = fr.*` (never `t`)
 - **All leaf values must be strings — no arrays, no non-string primitives**
-- Enforced via `NestedStringRecord` type + `satisfies` in `translations/index.ts`: TypeScript errors at compile time if an array or non-string value is introduced
-- Named keys replace arrays: `services.etudes/conception/realisation/pose`, `projects.cuisine/bibliotheque/dressing/autres`, `contact.form.projectTypes` as string record
+- Enforced via `NestedStringRecord` type + `satisfies` in `translations/index.ts`
+- All keys in English: `studies`, `design`, `production`, `installation`, `kitchen`, `bookcase`, `wardrobe`, `other`
 
 ---
 
@@ -213,7 +262,7 @@ Two data files introduced outside the slice plan:
 | Framework | Vite 7 + React 18 + TypeScript |
 | Styling | Tailwind CSS v4 + Sass |
 | Routing | React Router v7 (`createBrowserRouter`) |
-| Icons | lucide-react |
+| Icons | lucide-react (`strokeWidth={1.5}` convention) |
 | Package manager | npm (pnpm Volta shim issue → npx workaround used for scaffolding) |
 | Logo format | PNG with white background — transparency to be addressed in a future iteration |
 | Language | French (website content only) |
@@ -221,3 +270,5 @@ Two data files introduced outside the slice plan:
 | Content | All French copy in `app/translations/fr.json` |
 | Contact info | Centralised in `app/data/contact.ts` |
 | Translation alias | `const translations = fr.*` — never `const t` |
+| fr.json keys | Always English — values are French |
+| Lead conversion | Phone + email (copy-to-clipboard) preferred over contact form |
