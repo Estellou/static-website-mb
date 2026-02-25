@@ -38,8 +38,8 @@ export default function ContentMedia({ title, text, img, imgPosition, cta, child
   ) : null
 
   return (
-    <section className="w-full px-6 py-20 md:px-16 lg:px-24">
-      <div className="flex flex-col md:flex-row gap-16 items-center">
+    <section className="w-full px-6 py-10 md:py-20 md:px-16 lg:px-24">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
         {imgPosition === 'left' ? (
           <>
             {imageBlock}
