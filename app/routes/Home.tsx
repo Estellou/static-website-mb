@@ -28,10 +28,10 @@ export default function Home() {
           <Services
             title={translations.services.title}
             services={[
-              { icon: <Ruler size={32} strokeWidth={1.5} />, text: translations.services.items[0] },
-              { icon: <PenTool size={32} strokeWidth={1.5} />, text: translations.services.items[1] },
-              { icon: <Hammer size={32} strokeWidth={1.5} />, text: translations.services.items[2] },
-              { icon: <Wrench size={32} strokeWidth={1.5} />, text: translations.services.items[3] },
+              { icon: <Ruler size={32} strokeWidth={1.5} />,   text: translations.services.etudes },
+              { icon: <PenTool size={32} strokeWidth={1.5} />, text: translations.services.conception },
+              { icon: <Hammer size={32} strokeWidth={1.5} />,  text: translations.services.realisation },
+              { icon: <Wrench size={32} strokeWidth={1.5} />,  text: translations.services.pose },
             ]}
           />
         </section>
@@ -39,11 +39,12 @@ export default function Home() {
         <section id="projects">
           <Projects
             title={translations.projects.title}
-            projects={translations.projects.items.map((item) => ({
-              img: { src: '', alt: item.imgAlt },
-              title: item.title,
-              link: `/contact?projectType=${item.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`,
-            }))}
+            projects={[
+              { img: { src: '', alt: translations.projects.cuisine.imgAlt },     title: translations.projects.cuisine.title,     link: '/contact?projectType=cuisine' },
+              { img: { src: '', alt: translations.projects.bibliotheque.imgAlt }, title: translations.projects.bibliotheque.title, link: '/contact?projectType=bibliotheque' },
+              { img: { src: '', alt: translations.projects.dressing.imgAlt },    title: translations.projects.dressing.title,    link: '/contact?projectType=dressing' },
+              { img: { src: '', alt: translations.projects.autres.imgAlt },      title: translations.projects.autres.title,      link: '/contact?projectType=autres' },
+            ]}
           />
         </section>
 

@@ -3,10 +3,16 @@ import Input from './Input'
 import Select from './Select'
 import { fr, interpolate } from '../translations'
 
-const FORMSPREE_ENDPOINT = importranslations.meta.env.VITE_FORMSPREE_ENDPOINT as string
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string
 
-const translations = fr.contactranslations.form
-const PROJECT_TYPES = translations.projectTypes
+const translations = fr.contact.form
+
+// Derive [{ value, label }] array from the projectTypes string record
+const PROJECT_TYPES = Object.entries(translations.projectTypes).map(([value, label]) => ({
+  value,
+  label,
+}))
+
 const MIN_WORDS = 100
 
 interface FormData {
@@ -28,7 +34,7 @@ interface FormErrors {
 }
 
 function countWords(text: string): number {
-  return textranslations.trim().split(/\s+/).filter((w) => w.length > 0).length
+  return text.trim().split(/\s+/).filter((w) => w.length > 0).length
 }
 
 function validateEmail(email: string): boolean {
@@ -46,9 +52,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     email: '',
     phone: '',
     companyName: '',
-    projectType: PROJECT_TYPES.some((p) => p.value === defaultProjectType)
-      ? defaultProjectType
-      : 'autres',
+    projectType: defaultProjectType in translations.projectTypes ? defaultProjectType : 'autres',
     description: '',
   })
   const [errors, setErrors] = useState<FormErrors>({})
@@ -81,10 +85,10 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     return errs
   }
 
-  async function handleSubmit(e: Reactranslations.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const errs = validate()
-    if (Objectranslations.keys(errs).length > 0) {
+    if (Object.keys(errs).length > 0) {
       setErrors(errs)
       return
     }
@@ -100,7 +104,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           email: data.email,
           phone: data.phone,
           companyName: data.companyName || 'Non renseigné',
-          projectType: PROJECT_TYPES.find((p) => p.value === data.projectType)?.label,
+          projectType: translations.projectTypes[data.projectType as keyof typeof translations.projectTypes],
           description: data.description,
         }),
       })

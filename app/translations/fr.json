@@ -20,16 +20,29 @@
     },
     "services": {
       "title": "Notre savoir-faire",
-      "items": ["Études", "Conception", "Réalisation", "Pose"]
+      "etudes": "Études",
+      "conception": "Conception",
+      "realisation": "Réalisation",
+      "pose": "Pose"
     },
     "projects": {
       "title": "Nos réalisations",
-      "items": [
-        { "title": "Cuisine",      "imgAlt": "Cuisine sur mesure" },
-        { "title": "Bibliothèque", "imgAlt": "Bibliothèque sur mesure" },
-        { "title": "Dressing",     "imgAlt": "Dressing sur mesure" },
-        { "title": "Autres",       "imgAlt": "Autres réalisations" }
-      ]
+      "cuisine": {
+        "title": "Cuisine",
+        "imgAlt": "Cuisine sur mesure"
+      },
+      "bibliotheque": {
+        "title": "Bibliothèque",
+        "imgAlt": "Bibliothèque sur mesure"
+      },
+      "dressing": {
+        "title": "Dressing",
+        "imgAlt": "Dressing sur mesure"
+      },
+      "autres": {
+        "title": "Autres",
+        "imgAlt": "Autres réalisations"
+      }
     },
     "story": {
       "title": "L'atelier Belmonte",
@@ -61,25 +74,25 @@
           "placeholder": "Décrivez votre projet en détail : type de réalisation souhaitée, dimensions approximatives, matériaux envisagés, contraintes particulières et délai souhaité. Plus votre description est précise, mieux nous pourrons vous accompagner."
         }
       },
-      "projectTypes": [
-        { "value": "cuisine",     "label": "Cuisine" },
-        { "value": "bibliotheque","label": "Bibliothèque" },
-        { "value": "dressing",    "label": "Dressing" },
-        { "value": "autres",      "label": "Autres" }
-      ],
+      "projectTypes": {
+        "cuisine":      "Cuisine",
+        "bibliotheque": "Bibliothèque",
+        "dressing":     "Dressing",
+        "autres":       "Autres"
+      },
       "success": {
         "title": "Message envoyé !",
         "text": "Merci pour votre message. Nous avons bien reçu votre demande et reviendrons vers vous dans les plus brefs délais."
       },
       "error": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.",
       "validation": {
-        "firstNameRequired":    "Le prénom est requis.",
-        "familyNameRequired":   "Le nom est requis.",
-        "emailRequired":        "L'adresse e-mail est requise.",
-        "emailInvalid":         "L'adresse e-mail n'est pas valide.",
-        "phoneRequired":        "Le numéro de téléphone est requis.",
-        "descriptionRequired":  "La description est requise.",
-        "descriptionMinWords":  "La description doit contenir au moins {min} mots ({count} mot{plural} actuellement)."
+        "firstNameRequired":   "Le prénom est requis.",
+        "familyNameRequired":  "Le nom est requis.",
+        "emailRequired":       "L'adresse e-mail est requise.",
+        "emailInvalid":        "L'adresse e-mail n'est pas valide.",
+        "phoneRequired":       "Le numéro de téléphone est requis.",
+        "descriptionRequired": "La description est requise.",
+        "descriptionMinWords": "La description doit contenir au moins {min} mots ({count} mot{plural} actuellement)."
       }
     },
     "contactUs": {
