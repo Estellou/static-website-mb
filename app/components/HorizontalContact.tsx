@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactNode } from 'react'
-import { X } from 'lucide-react'
+import Toast from './Toast'
 
 interface HorizontalContactItem {
   icon: ReactNode
@@ -52,29 +52,13 @@ export default function HorizontalContact({ items }: HorizontalContactProps) {
         ))}
       </div>
 
-      {/* Toast */}
-      {toastVisible && (
-        <div className="fixed top-4 right-4 z-50 w-64 bg-gray-700 text-white shadow-lg overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3">
-            <span className="text-sm">Copié !</span>
-            <button
-              onClick={() => setToastVisible(false)}
-              className="text-gray-300 hover:text-white transition-colors ml-4"
-              aria-label="Fermer"
-            >
-              <X size={14} strokeWidth={1.5} />
-            </button>
-          </div>
-          {/* Progress bar */}
-          <div className="h-0.5 bg-gray-600">
-            <div
-              key={toastKey}
-              className="h-full bg-white"
-              style={{ animation: `toast-progress ${TOAST_DURATION}ms linear forwards` }}
-            />
-          </div>
-        </div>
-      )}
+      <Toast
+        message="Copié !"
+        visible={toastVisible}
+        duration={TOAST_DURATION}
+        animationKey={toastKey}
+        onClose={() => setToastVisible(false)}
+      />
     </>
   )
 }
