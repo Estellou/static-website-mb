@@ -111,10 +111,15 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 8 — Photos in ContentMedia blocks
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Add images to the ContentMedia blocks (company story + contact)
+
+**Decisions:**
+- `img` prop passed to both ContentMedia blocks with empty `src` — gray placeholder shown until real photos are available
+- `aspect-[4/3]` applied to the image container in ContentMedia for consistent proportions
+- Placeholder pattern consistent with Hero (Slice 7) and Projects (Slice 4): same `bg-gray-100` fallback
 
 ---
 
