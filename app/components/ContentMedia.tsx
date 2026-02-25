@@ -3,7 +3,7 @@ import CtaLink from './CtaLink'
 
 interface ContentMediaProps {
   title: string
-  text: string
+  text: ReactNode
   img?: { src: string; alt: string }
   imgPosition: 'left' | 'right'
   cta?: { label: string; link: string }

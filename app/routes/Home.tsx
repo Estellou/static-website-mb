@@ -51,7 +51,20 @@ export default function Home() {
         <section id="story">
           <ContentMedia
             title={translations.story.title}
-            text={interpolate(translations.story.text, { companyName: CONTACT.companyName })}
+            text={
+              <>
+                {interpolate(translations.story.textBefore, { companyName: CONTACT.companyName })}
+                <a
+                  href={translations.story.schoolUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-black transition-colors"
+                >
+                  {translations.story.schoolName}
+                </a>
+                {translations.story.textAfter}
+              </>
+            }
             imgPosition="left"
             img={{ src: '', alt: interpolate(translations.story.imgAlt, { companyName: CONTACT.companyName }) }}
           />

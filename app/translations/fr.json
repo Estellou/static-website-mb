@@ -44,7 +44,10 @@
     },
     "story": {
       "title": "L'atelier Belmonte",
-      "text": "{companyName} a été créée par Romain Belmonte, menuisier diplômé de la Philopatique initialement ingénieur d'affaires en bâtiment. Il conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Romain allie son expertise d'ingénieur à son savoir-faire artisanal afin de créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent.",
+      "textBefore": "{companyName} a été créée par Romain Belmonte, menuisier diplômé de la ",
+      "schoolName": "Philomathique",
+      "schoolUrl":  "https://philomathiquebordeaux.com/",
+      "textAfter":  " initialement ingénieur d'affaires en bâtiment. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Passionné, Romain allie son expertise d'ingénieur à son savoir-faire artisanal afin de créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent.",
       "imgAlt": "L'atelier {companyName}"
     },
     "contactUs": {
@@ -75,10 +78,10 @@
         }
       },
       "projectTypes": {
-        "kitchen":   "Cuisine",
-        "bookcase":  "Bibliothèque",
-        "wardrobe":  "Dressing",
-        "other":     "Autres"
+        "kitchen": "Cuisine",
+        "bookcase": "Bibliothèque",
+        "wardrobe": "Dressing",
+        "other": "Autres"
       },
       "success": {
         "title": "Message envoyé !",
@@ -86,11 +89,11 @@
       },
       "error": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.",
       "validation": {
-        "firstNameRequired":   "Le prénom est requis.",
-        "familyNameRequired":  "Le nom est requis.",
-        "emailRequired":       "L'adresse e-mail est requise.",
-        "emailInvalid":        "L'adresse e-mail n'est pas valide.",
-        "phoneRequired":       "Le numéro de téléphone est requis.",
+        "firstNameRequired": "Le prénom est requis.",
+        "familyNameRequired": "Le nom est requis.",
+        "emailRequired": "L'adresse e-mail est requise.",
+        "emailInvalid": "L'adresse e-mail n'est pas valide.",
+        "phoneRequired": "Le numéro de téléphone est requis.",
         "descriptionRequired": "La description est requise.",
         "descriptionMinWords": "La description doit contenir au moins {min} mots ({count} mot{plural} actuellement)."
       }
