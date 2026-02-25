@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react'
 import CtaLink from './CtaLink'
 
 interface ContentMediaProps {
@@ -6,13 +7,15 @@ interface ContentMediaProps {
   img?: { src: string; alt: string }
   imgPosition: 'left' | 'right'
   cta?: { label: string; link: string }
+  children?: ReactNode
 }
 
-export default function ContentMedia({ title, text, img, imgPosition, cta }: ContentMediaProps) {
+export default function ContentMedia({ title, text, img, imgPosition, cta, children }: ContentMediaProps) {
   const textBlock = (
     <div className="flex flex-col justify-center gap-6 flex-1">
       <h3 className="text-3xl font-bold text-black">{title}</h3>
       <p className="text-base text-gray-600 leading-relaxed">{text}</p>
+      {children}
       {cta && (
         <CtaLink
           href={cta.link}

@@ -1,9 +1,10 @@
-import { Ruler, PenTool, Hammer, Wrench } from 'lucide-react'
+import { Ruler, PenTool, Hammer, Wrench, Phone, Mail } from 'lucide-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
 import Projects from '../components/Projects'
 import ContentMedia from '../components/ContentMedia'
+import HorizontalContact from '../components/HorizontalContact'
 import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
 
@@ -60,11 +61,18 @@ export default function Home() {
         <section id="contact">
           <ContentMedia
             title={translations.contactUs.title}
-            text={interpolate(translations.contactUs.text, { phoneNumber: CONTACT.phoneNumber })}
+            text={translations.contactUs.text}
             imgPosition="right"
             img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
             cta={{ label: translations.contactUs.cta, link: '/contact' }}
-          />
+          >
+            <HorizontalContact
+              items={[
+                { icon: <Phone size={20} strokeWidth={1.5} />, label: translations.contactUs.phoneLabel, value: CONTACT.phoneNumber },
+                { icon: <Mail size={20} strokeWidth={1.5} />,  label: translations.contactUs.emailLabel,  value: CONTACT.email },
+              ]}
+            />
+          </ContentMedia>
         </section>
       </main>
     </>

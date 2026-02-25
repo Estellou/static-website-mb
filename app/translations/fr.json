@@ -49,7 +49,9 @@
     },
     "contactUs": {
       "title": "Parlons de votre projet",
-      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au {phoneNumber} ou via notre formulaire de contact. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? N'hésitez pas à nous contacter, nous sommes à votre écoute. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "E-mail",
       "imgAlt": "Contactez {companyName}",
       "cta": "Démarrer un projet"
     }
@@ -95,7 +97,9 @@
     },
     "contactUs": {
       "title": "Parlons de votre projet",
-      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au {phoneNumber} ou via notre formulaire ci-dessus. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "text": "Vous préférez nous contacter directement ? Nous sommes disponibles par téléphone ou par e-mail. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "E-mail",
       "imgAlt": "Contactez {companyName}"
     }
   }
