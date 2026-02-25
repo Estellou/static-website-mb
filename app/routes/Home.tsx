@@ -20,7 +20,6 @@ export default function Home() {
             title={translations.hero.title}
             text={interpolate(translations.hero.text, { companyName: CONTACT.companyName })}
             primaryCta={{ label: translations.hero.primaryCta, link: '#contact' }}
-            secondaryCta={{ label: translations.hero.secondaryCta, link: '#contact' }}
             img={{ src: '', alt: interpolate(translations.hero.imgAlt, { companyName: CONTACT.companyName }) }}
           />
         </section>

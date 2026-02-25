@@ -4,7 +4,7 @@ interface HeroProps {
   title: string
   text: string
   primaryCta: { label: string; link: string }
-  secondaryCta: { label: string; link: string }
+  secondaryCta?: { label: string; link: string }
   img?: { src: string; alt: string }
 }
 
@@ -23,12 +23,14 @@ export default function Hero({ title, text, primaryCta, secondaryCta, img }: Her
             >
               {primaryCta.label}
             </CtaLink>
-            <CtaLink
-              href={secondaryCta.link}
-              className="inline-block border border-black text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-colors"
-            >
-              {secondaryCta.label}
-            </CtaLink>
+            {secondaryCta && (
+              <CtaLink
+                href={secondaryCta.link}
+                className="inline-block border border-black text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-colors"
+              >
+                {secondaryCta.label}
+              </CtaLink>
+            )}
           </div>
         </div>
       </div>
