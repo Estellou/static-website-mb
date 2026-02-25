@@ -8,6 +8,11 @@ section[id] {
   scroll-margin-top: 96px; /* sticky header height (~88px) + 8px breathing room */
 }
 
+@keyframes toast-progress {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
 @theme {
   /* Colors */
   --color-primary: #000000;
