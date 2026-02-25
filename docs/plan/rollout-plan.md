@@ -61,11 +61,18 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 4 — Projects block (photos + text, not interactive)
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Projects component: left-aligned H3, image grid with H4 subtitles
 - Photos + text, no links yet (interactivity comes in Slice 12)
+
+**Decisions:**
+- 4 projects chosen by client: Cuisine · Bibliothèque · Dressing · Autres
+- Responsive grid: 4 columns desktop, 2 tablet, 1 mobile
+- Gray placeholder (`bg-gray-100`) shown when no image `src` provided — real photos added in Slice 8
+- `link` prop stored in project data now with `?projectType=` params ready for Slice 12
+- H4 labels displayed in uppercase with letter-spacing for clean typographic hierarchy
 
 ---
 
