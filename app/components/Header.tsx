@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
+import { CONTACT } from '../data/contact'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -18,9 +19,9 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Menuiserie Belmonte logo" className="h-10 w-auto" />
+          <img src={logo} alt={`${CONTACT.companyName} logo`} className="h-10 w-auto" />
           <span className="text-sm font-semibold text-black tracking-wide uppercase">
-            Menuiserie Belmonte
+            {CONTACT.companyName}
           </span>
         </Link>
 
