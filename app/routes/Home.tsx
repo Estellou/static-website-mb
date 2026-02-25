@@ -64,7 +64,6 @@ export default function Home() {
             text={translations.contactUs.text}
             imgPosition="right"
             img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
-            cta={{ label: translations.contactUs.cta, link: '#contact' }}
           >
             <HorizontalContact
               items={[

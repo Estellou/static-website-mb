@@ -12,7 +12,7 @@ interface HorizontalContactProps {
 
 export default function HorizontalContact({ items }: HorizontalContactProps) {
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col gap-4">
       {items.map((item, index) => (
         <div key={index} className="flex items-center gap-3">
           <div className="text-gray-400">{item.icon}</div>
