@@ -171,11 +171,16 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 12 — Projects linked to form via URL param
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Each project card links to `/contact?projectType=xxx`
 - `projectType` select field in the form is prefilled from the URL param
+
+**Decisions:**
+- Project cards wrapped in React Router `<Link>` with `group` class for hover coordination
+- Hover: image fades to 80% opacity, title gets underline — signals interactivity without heavy decoration
+- `link` prop was already stored in project data (since Slice 4) and `?projectType` already read in Contact.tsx (since Slice 10) — only Projects.tsx needed updating
 
 ---
 
