@@ -26,10 +26,12 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.services}</a>
-          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.projects}</a>
-          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.story}</a>
-          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.contact}</a>
+          <Link to="/" className="text-sm text-gray-500 hover:text-black transition-colors">
+            {translations.nav.home}
+          </Link>
+          <a href="#contact" className="text-sm text-gray-500 hover:text-black transition-colors">
+            {translations.nav.contact}
+          </a>
           <Link
             to="/contact"
             className="inline-block bg-black text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition-colors"
@@ -54,10 +56,20 @@ export default function Header() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav className="md:hidden flex flex-col border-t border-gray-100 px-6 py-6 gap-5 bg-white">
-          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.services}</a>
-          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.projects}</a>
-          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.story}</a>
-          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.contact}</a>
+          <Link
+            to="/"
+            className="text-sm text-gray-500 hover:text-black transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {translations.nav.home}
+          </Link>
+          <a
+            href="#contact"
+            className="text-sm text-gray-500 hover:text-black transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {translations.nav.contact}
+          </a>
           <Link
             to="/contact"
             className="inline-block bg-black text-white px-6 py-3 text-sm font-medium text-center hover:bg-gray-800 transition-colors mt-2"
