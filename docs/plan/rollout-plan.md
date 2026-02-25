@@ -157,10 +157,16 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 11 — Final header: navigation links
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Refine header links: Home | Nous contacter (anchor) | Démarrer un projet (→ /contact)
+
+**Decisions:**
+- Section anchor links (Services, Projets, Notre histoire) removed from final nav — header kept minimal per spec
+- `Accueil` uses React Router `<Link to="/">` for client-side navigation
+- `Nous contacter` uses `<a href="#contact">` for same-page anchor scroll
+- `fr.json` header.nav simplified to `home` and `contact` keys only
 
 ---
 
