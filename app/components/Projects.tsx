@@ -10,7 +10,7 @@ interface ProjectsProps {
 
 export default function Projects({ title, projects }: ProjectsProps) {
   return (
-    <section className="w-full px-6 py-20 md:px-16 lg:px-24">
+    <section className="w-full px-6 pt-20 pb-10 md:py-20 md:px-16 lg:px-24">
       <h3 className="text-3xl font-bold text-black mb-12">{title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project, index) => (
