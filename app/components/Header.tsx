@@ -27,11 +27,11 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm text-gray-500 hover:text-black transition-colors">
-            {translations.nav.home}
-          </Link>
-          <a href="#contact" className="text-sm text-gray-500 hover:text-black transition-colors">
-            {translations.nav.contact}
+          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors">
+            {translations.nav.features}
+          </a>
+          <a href="#story" className="text-sm text-gray-500 hover:text-black transition-colors">
+            {translations.nav.story}
           </a>
           <a
             href="#contact"
@@ -57,19 +57,19 @@ export default function Header() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav className="md:hidden flex flex-col border-t border-gray-100 px-6 py-6 gap-5 bg-white">
-          <Link
-            to="/"
-            className="text-sm text-gray-500 hover:text-black transition-colors"
-            onClick={() => setMenuOpen(false)}
-          >
-            {translations.nav.home}
-          </Link>
           <a
-            href="#contact"
+            href="#services"
             className="text-sm text-gray-500 hover:text-black transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            {translations.nav.contact}
+            {translations.nav.features}
+          </a>
+          <a
+            href="#story"
+            className="text-sm text-gray-500 hover:text-black transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {translations.nav.story}
           </a>
           <a
             href="#contact"

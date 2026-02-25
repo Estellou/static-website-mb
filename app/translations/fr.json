@@ -3,8 +3,8 @@
     "logoAlt": "{companyName} logo",
     "companyName": "{companyName}",
     "nav": {
-      "home": "Accueil",
-      "contact": "Nous contacter"
+      "features": "Nos prestations",
+      "story": "Notre histoire"
     },
     "cta": "Démarrer un projet"
   },
