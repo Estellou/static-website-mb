@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 96px; /* sticky header height (~88px) + 8px breathing room */
+}
+
 @theme {
   /* Colors */
   --color-primary: #000000;
