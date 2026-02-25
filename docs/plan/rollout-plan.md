@@ -189,6 +189,9 @@ Two data files introduced outside the slice plan:
 - Supports `{placeholder}` tokens for runtime values (e.g. `{companyName}`, `{phoneNumber}`)
 - `interpolate(template, vars)` utility in `app/translations/index.ts` handles substitution
 - Translation alias convention: always `const translations = fr.*` (never `t`)
+- **All leaf values must be strings — no arrays, no non-string primitives**
+- Enforced via `NestedStringRecord` type + `satisfies` in `translations/index.ts`: TypeScript errors at compile time if an array or non-string value is introduced
+- Named keys replace arrays: `services.etudes/conception/realisation/pose`, `projects.cuisine/bibliotheque/dressing/autres`, `contact.form.projectTypes` as string record
 
 ---
 
