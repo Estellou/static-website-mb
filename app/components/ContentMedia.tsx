@@ -10,10 +10,24 @@ interface ContentMediaProps {
   children?: ReactNode
 }
 
+function ImageContent({ img }: { img: NonNullable<ContentMediaProps['img']> }) {
+  return img.src ? (
+    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+  ) : (
+    <div className="w-full h-full bg-gray-100" />
+  )
+}
+
 export default function ContentMedia({ title, text, img, imgPosition, cta, children }: ContentMediaProps) {
   const textBlock = (
     <div className="flex flex-col justify-center gap-6 flex-1">
       <h3 className="text-3xl font-bold text-black">{title}</h3>
+      {/* Mobile only: image between title and text */}
+      {img && (
+        <div className="md:hidden aspect-[4/3]">
+          <ImageContent img={img} />
+        </div>
+      )}
       <p className="text-base text-gray-600 leading-relaxed">{text}</p>
       {children}
       {cta && (
@@ -27,13 +41,10 @@ export default function ContentMedia({ title, text, img, imgPosition, cta, child
     </div>
   )
 
+  // Desktop only: image as side column
   const imageBlock = img ? (
-    <div className="flex-1 aspect-[4/3]">
-      {img.src ? (
-        <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-      ) : (
-        <div className="w-full h-full bg-gray-100" />
-      )}
+    <div className="hidden md:block flex-1 aspect-[4/3]">
+      <ImageContent img={img} />
     </div>
   ) : null
 
