@@ -104,7 +104,7 @@ See [`docs/plan/rollout-plan.md`](docs/plan/rollout-plan.md) for the full slice 
 | 4 | Home: Projects block (photos + text, not interactive) | Done |
 | 5 | Home: ContentMedia — company story | Done |
 | 6 | Home: Add logo | Done *(merged into Slice 2)* |
-| 7 | Home: Hero with photo | To do |
+| 7 | Home: Hero with photo | Done |
 | 8 | Home: Photos in ContentMedia blocks | To do |
 | 9 | Website hosted and live — contact block without photo | To do |
 

@@ -96,11 +96,17 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 7 — Hero with photo
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Add image to the Hero (right side, 1/3 width on desktop, hidden on mobile)
 - Background fades progressively into white
+
+**Decisions:**
+- `img` prop is optional — Hero renders gracefully without it (text full width)
+- Fade implemented via `position: absolute` gradient div (`from-white to-transparent`) on the left half of the image block
+- Gray placeholder (`bg-gray-100`) used until real photo is provided
+- Hero section uses `items-stretch` so image block fills the full section height
 
 ---
 
