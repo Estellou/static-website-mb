@@ -43,7 +43,13 @@ export default function Home() {
           />
         </section>
 
-        {/* id="story" reserved for slice 5 */}
+        <section id="story">
+          <ContentMedia
+            title="L'atelier Belmonte"
+            text="Depuis plus de 20 ans, Menuiserie Belmonte conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Nous intervenons auprès des particuliers et des professionnels pour créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent."
+            imgPosition="left"
+          />
+        </section>
 
         <section id="contact">
           <ContentMedia
