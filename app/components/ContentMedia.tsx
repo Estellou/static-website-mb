@@ -10,23 +10,15 @@ interface ContentMediaProps {
   children?: ReactNode
 }
 
-function ImageContent({ img }: { img: NonNullable<ContentMediaProps['img']> }) {
-  return img.src ? (
-    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-  ) : (
-    <div className="w-full h-full bg-gray-100" />
-  )
-}
-
 export default function ContentMedia({ title, text, img, imgPosition, cta, children }: ContentMediaProps) {
   const textBlock = (
-    <div className="flex flex-col justify-center gap-6 flex-1">
+    <div className="flex flex-col gap-6 md:justify-center md:flex-1">
       <h3 className="text-3xl font-bold text-black">{title}</h3>
-      {/* Mobile only: image between title and text */}
+      {/* Mobile only: image between title and text — bg/src applied directly to avoid h-full inside aspect-ratio */}
       {img && (
-        <div className="md:hidden aspect-[4/3]">
-          <ImageContent img={img} />
-        </div>
+        img.src
+          ? <img src={img.src} alt={img.alt} className="md:hidden w-full aspect-[4/3] object-cover" />
+          : <div className="md:hidden w-full aspect-[4/3] bg-gray-100" />
       )}
       <p className="text-base text-gray-600 leading-relaxed">{text}</p>
       {children}
@@ -43,8 +35,11 @@ export default function ContentMedia({ title, text, img, imgPosition, cta, child
 
   // Desktop only: image as side column
   const imageBlock = img ? (
-    <div className="hidden md:block flex-1 aspect-[4/3]">
-      <ImageContent img={img} />
+    <div className="hidden md:block md:flex-1">
+      {img.src
+        ? <img src={img.src} alt={img.alt} className="w-full aspect-[4/3] object-cover" />
+        : <div className="w-full aspect-[4/3] bg-gray-100" />
+      }
     </div>
   ) : null
 
