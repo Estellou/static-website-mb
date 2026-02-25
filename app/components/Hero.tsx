@@ -12,7 +12,7 @@ export default function Hero({ title, text, primaryCta, secondaryCta, img }: Her
   return (
     <section className="w-full flex items-stretch overflow-hidden">
       {/* Text block */}
-      <div className="flex-1 px-6 py-24 md:px-16 lg:px-24">
+      <div className="flex-1 px-6 py-12 md:py-24 md:px-16 lg:px-24">
         <div className="max-w-2xl">
           <h1 className="text-5xl font-bold text-black leading-tight mb-6">{title}</h1>
           <p className="text-lg text-gray-600 mb-10">{text}</p>

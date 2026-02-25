@@ -17,11 +17,12 @@ export default function Header() {
           <img
             src={logo}
             alt={interpolate(translations.logoAlt, { companyName: CONTACT.companyName })}
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
-          <span className="text-sm font-semibold text-black tracking-wide uppercase">
-            {interpolate(translations.companyName, { companyName: CONTACT.companyName })}
-          </span>
+          <div className="flex flex-col justify-center h-14">
+            <span className="text-xs font-semibold text-black tracking-wide uppercase leading-tight">Menuiserie</span>
+            <span className="text-xs font-semibold text-black tracking-wide uppercase leading-tight">Belmonte</span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
