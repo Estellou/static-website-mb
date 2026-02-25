@@ -77,10 +77,16 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 5 — ContentMedia — company story
-**Status:** To do
+**Status:** Done
 
 **Scope:**
 - Add a second ContentMedia block on the home page telling the company story
+
+**Decisions:**
+- `imgPosition="left"` to alternate visually with the contact block (`right`)
+- Placeholder copy used for now: *"L'atelier Belmonte"* — 20 years, artisan craftwork, particuliers and professionnels
+- No image yet — real photo added in Slice 8
+- No CTA on this block (contact block below already carries the call to action)
 
 ---
 

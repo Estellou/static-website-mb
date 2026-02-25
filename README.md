@@ -102,7 +102,7 @@ See [`docs/plan/rollout-plan.md`](docs/plan/rollout-plan.md) for the full slice 
 | 2 | Home: Header with anchors to all sections | Done |
 | 3 | Home: Icons on services | Done |
 | 4 | Home: Projects block (photos + text, not interactive) | Done |
-| 5 | Home: ContentMedia — company story | To do |
+| 5 | Home: ContentMedia — company story | Done |
 | 6 | Home: Add logo | Done *(merged into Slice 2)* |
 | 7 | Home: Hero with photo | To do |
 | 8 | Home: Photos in ContentMedia blocks | To do |
