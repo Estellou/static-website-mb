@@ -1,0 +1,91 @@
+{
+  "header": {
+    "logoAlt": "{companyName} logo",
+    "companyName": "{companyName}",
+    "nav": {
+      "services": "Services",
+      "projects": "Projets",
+      "story": "Notre histoire",
+      "contact": "Nous contacter"
+    },
+    "cta": "Démarrer un projet"
+  },
+  "home": {
+    "hero": {
+      "title": "De la matière à la création",
+      "text": "{companyName} réalise sur mesure vos agencements et mobiliers. Chaque projet est pensé, conçu et fabriqué artisanalement pour s'adapter parfaitement à votre espace et à vos envies.",
+      "primaryCta": "Démarrer un projet",
+      "secondaryCta": "Nous contacter",
+      "imgAlt": "Atelier {companyName}"
+    },
+    "services": {
+      "title": "Notre savoir-faire",
+      "items": ["Études", "Conception", "Réalisation", "Pose"]
+    },
+    "projects": {
+      "title": "Nos réalisations",
+      "items": [
+        { "title": "Cuisine",      "imgAlt": "Cuisine sur mesure" },
+        { "title": "Bibliothèque", "imgAlt": "Bibliothèque sur mesure" },
+        { "title": "Dressing",     "imgAlt": "Dressing sur mesure" },
+        { "title": "Autres",       "imgAlt": "Autres réalisations" }
+      ]
+    },
+    "story": {
+      "title": "L'atelier Belmonte",
+      "text": "Depuis plus de 20 ans, {companyName} conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Nous intervenons auprès des particuliers et des professionnels pour créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent.",
+      "imgAlt": "L'atelier {companyName}"
+    },
+    "contactUs": {
+      "title": "Parlons de votre projet",
+      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au {phoneNumber} ou via notre formulaire de contact. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "imgAlt": "Contactez {companyName}",
+      "cta": "Démarrer un projet"
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Démarrer un projet",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "wordCount": "{count} / {min} mots minimum",
+      "fields": {
+        "firstName":   { "label": "Prénom" },
+        "familyName":  { "label": "Nom" },
+        "email":       { "label": "Adresse e-mail" },
+        "phone":       { "label": "Téléphone" },
+        "companyName": { "label": "Entreprise" },
+        "projectType": { "label": "Type de projet" },
+        "description": {
+          "label": "Description du projet",
+          "placeholder": "Décrivez votre projet en détail : type de réalisation souhaitée, dimensions approximatives, matériaux envisagés, contraintes particulières et délai souhaité. Plus votre description est précise, mieux nous pourrons vous accompagner."
+        }
+      },
+      "projectTypes": [
+        { "value": "cuisine",     "label": "Cuisine" },
+        { "value": "bibliotheque","label": "Bibliothèque" },
+        { "value": "dressing",    "label": "Dressing" },
+        { "value": "autres",      "label": "Autres" }
+      ],
+      "success": {
+        "title": "Message envoyé !",
+        "text": "Merci pour votre message. Nous avons bien reçu votre demande et reviendrons vers vous dans les plus brefs délais."
+      },
+      "error": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.",
+      "validation": {
+        "firstNameRequired":    "Le prénom est requis.",
+        "familyNameRequired":   "Le nom est requis.",
+        "emailRequired":        "L'adresse e-mail est requise.",
+        "emailInvalid":         "L'adresse e-mail n'est pas valide.",
+        "phoneRequired":        "Le numéro de téléphone est requis.",
+        "descriptionRequired":  "La description est requise.",
+        "descriptionMinWords":  "La description doit contenir au moins {min} mots ({count} mot{plural} actuellement)."
+      }
+    },
+    "contactUs": {
+      "title": "Parlons de votre projet",
+      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au {phoneNumber} ou via notre formulaire ci-dessus. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "imgAlt": "Contactez {companyName}"
+    }
+  }
+}

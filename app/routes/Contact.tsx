@@ -2,7 +2,10 @@ import { useSearchParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Form from '../components/Form'
 import ContentMedia from '../components/ContentMedia'
+import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
+
+const t = fr.contact
 
 export default function Contact() {
   const [searchParams] = useSearchParams()
@@ -15,10 +18,10 @@ export default function Contact() {
         <Form defaultProjectType={projectType} />
         <section id="contact">
           <ContentMedia
-            title="Parlons de votre projet"
-            text={`Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au ${CONTACT.phoneNumber} ou via notre formulaire ci-dessus. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.`}
+            title={t.contactUs.title}
+            text={interpolate(t.contactUs.text, { phoneNumber: CONTACT.phoneNumber })}
             imgPosition="right"
-            img={{ src: '', alt: `Contactez ${CONTACT.companyName}` }}
+            img={{ src: '', alt: interpolate(t.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
           />
         </section>
       </main>

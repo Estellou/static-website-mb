@@ -1,19 +1,12 @@
 import { useState } from 'react'
 import Input from './Input'
 import Select from './Select'
+import { fr, interpolate } from '../translations'
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string
 
-const PROJECT_TYPES = [
-  { value: 'cuisine', label: 'Cuisine' },
-  { value: 'bibliotheque', label: 'Bibliothèque' },
-  { value: 'dressing', label: 'Dressing' },
-  { value: 'autres', label: 'Autres' },
-]
-
-const DESCRIPTION_PLACEHOLDER =
-  'Décrivez votre projet en détail : type de réalisation souhaitée, dimensions approximatives, matériaux envisagés, contraintes particulières et délai souhaité. Plus votre description est précise, mieux nous pourrons vous accompagner.'
-
+const t = fr.contact.form
+const PROJECT_TYPES = t.projectTypes
 const MIN_WORDS = 100
 
 interface FormData {
@@ -53,7 +46,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     email: '',
     phone: '',
     companyName: '',
-    projectType: PROJECT_TYPES.some((t) => t.value === defaultProjectType)
+    projectType: PROJECT_TYPES.some((p) => p.value === defaultProjectType)
       ? defaultProjectType
       : 'autres',
     description: '',
@@ -67,19 +60,23 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
 
   function validate(): FormErrors {
     const errs: FormErrors = {}
-    if (!data.firstName.trim()) errs.firstName = 'Le prénom est requis.'
-    if (!data.familyName.trim()) errs.familyName = 'Le nom est requis.'
+    if (!data.firstName.trim()) errs.firstName = t.validation.firstNameRequired
+    if (!data.familyName.trim()) errs.familyName = t.validation.familyNameRequired
     if (!data.email.trim()) {
-      errs.email = "L'adresse e-mail est requise."
+      errs.email = t.validation.emailRequired
     } else if (!validateEmail(data.email)) {
-      errs.email = "L'adresse e-mail n'est pas valide."
+      errs.email = t.validation.emailInvalid
     }
-    if (!data.phone.trim()) errs.phone = 'Le numéro de téléphone est requis.'
+    if (!data.phone.trim()) errs.phone = t.validation.phoneRequired
     const wordCount = countWords(data.description)
     if (!data.description.trim()) {
-      errs.description = 'La description est requise.'
+      errs.description = t.validation.descriptionRequired
     } else if (wordCount < MIN_WORDS) {
-      errs.description = `La description doit contenir au moins ${MIN_WORDS} mots (${wordCount} mot${wordCount > 1 ? 's' : ''} actuellement).`
+      errs.description = interpolate(t.validation.descriptionMinWords, {
+        min: String(MIN_WORDS),
+        count: String(wordCount),
+        plural: wordCount > 1 ? 's' : '',
+      })
     }
     return errs
   }
@@ -103,15 +100,11 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           email: data.email,
           phone: data.phone,
           companyName: data.companyName || 'Non renseigné',
-          projectType: PROJECT_TYPES.find((t) => t.value === data.projectType)?.label,
+          projectType: PROJECT_TYPES.find((p) => p.value === data.projectType)?.label,
           description: data.description,
         }),
       })
-      if (response.ok) {
-        setStatus('success')
-      } else {
-        setStatus('error')
-      }
+      setStatus(response.ok ? 'success' : 'error')
     } catch {
       setStatus('error')
     }
@@ -123,11 +116,8 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     return (
       <section className="w-full px-6 py-24 md:px-16 lg:px-24">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-black mb-4">Message envoyé !</h2>
-          <p className="text-base text-gray-600">
-            Merci pour votre message. Nous avons bien reçu votre demande et reviendrons vers vous
-            dans les plus brefs délais.
-          </p>
+          <h2 className="text-3xl font-bold text-black mb-4">{t.success.title}</h2>
+          <p className="text-base text-gray-600">{t.success.text}</p>
         </div>
       </section>
     )
@@ -136,16 +126,14 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
   return (
     <section className="w-full px-6 py-20 md:px-16 lg:px-24">
       <div className="max-w-2xl">
-        <h2 className="text-3xl font-bold text-black mb-10">Démarrer un projet</h2>
+        <h2 className="text-3xl font-bold text-black mb-10">{t.title}</h2>
         {status === 'error' && (
-          <p className="text-sm text-red-500 mb-6">
-            Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.
-          </p>
+          <p className="text-sm text-red-500 mb-6">{t.error}</p>
         )}
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Input
-              label="Prénom"
+              label={t.fields.firstName.label}
               name="firstName"
               required
               value={data.firstName}
@@ -153,7 +141,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
               error={errors.firstName}
             />
             <Input
-              label="Nom"
+              label={t.fields.familyName.label}
               name="familyName"
               required
               value={data.familyName}
@@ -163,7 +151,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Input
-              label="Adresse e-mail"
+              label={t.fields.email.label}
               name="email"
               type="email"
               required
@@ -172,7 +160,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
               error={errors.email}
             />
             <Input
-              label="Téléphone"
+              label={t.fields.phone.label}
               name="phone"
               type="tel"
               required
@@ -182,13 +170,13 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
             />
           </div>
           <Input
-            label="Entreprise"
+            label={t.fields.companyName.label}
             name="companyName"
             value={data.companyName}
             onChange={set('companyName')}
           />
           <Select
-            label="Type de projet"
+            label={t.fields.projectType.label}
             name="projectType"
             options={PROJECT_TYPES}
             value={data.projectType}
@@ -196,17 +184,17 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           />
           <div className="flex flex-col gap-1.5">
             <Input
-              label="Description du projet"
+              label={t.fields.description.label}
               name="description"
               multiline
               required
-              placeholder={DESCRIPTION_PLACEHOLDER}
+              placeholder={t.fields.description.placeholder}
               value={data.description}
               onChange={set('description')}
               error={errors.description}
             />
             <p className={`text-xs text-right ${wordCount >= MIN_WORDS ? 'text-green-600' : 'text-gray-400'}`}>
-              {wordCount} / {MIN_WORDS} mots minimum
+              {interpolate(t.wordCount, { count: String(wordCount), min: String(MIN_WORDS) })}
             </p>
           </div>
           <button
@@ -214,7 +202,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
             disabled={status === 'submitting'}
             className="self-start bg-black text-white px-10 py-3 text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
           >
-            {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer ma demande'}
+            {status === 'submitting' ? t.submitting : t.submit}
           </button>
         </form>
       </div>
