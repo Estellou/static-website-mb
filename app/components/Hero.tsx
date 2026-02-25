@@ -1,0 +1,33 @@
+import CtaLink from './CtaLink'
+
+interface HeroProps {
+  title: string
+  text: string
+  primaryCta: { label: string; link: string }
+  secondaryCta: { label: string; link: string }
+}
+
+export default function Hero({ title, text, primaryCta, secondaryCta }: HeroProps) {
+  return (
+    <section className="w-full px-6 py-24 md:px-16 lg:px-24">
+      <div className="max-w-2xl">
+        <h1 className="text-5xl font-bold text-black leading-tight mb-6">{title}</h1>
+        <p className="text-lg text-gray-600 mb-10">{text}</p>
+        <div className="flex flex-wrap gap-4">
+          <CtaLink
+            href={primaryCta.link}
+            className="inline-block bg-black text-white px-8 py-3 text-sm font-medium hover:bg-gray-800 transition-colors"
+          >
+            {primaryCta.label}
+          </CtaLink>
+          <CtaLink
+            href={secondaryCta.link}
+            className="inline-block border border-black text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-colors"
+          >
+            {secondaryCta.label}
+          </CtaLink>
+        </div>
+      </div>
+    </section>
+  )
+}
