@@ -11,7 +11,7 @@
   "home": {
     "hero": {
       "title": "De la matière à la création",
-      "text": "{companyName} réalise sur mesure vos agencements et mobiliers. Chaque projet est pensé, conçu et fabriqué artisanalement pour s'adapter parfaitement à votre espace et à vos envies.",
+      "text": "{companyName} réalise sur mesure vos agencements et mobiliers dans la région de Bordeaux. Chaque projet est pensé, conçu et fabriqué artisanalement pour s'adapter parfaitement à votre espace et à vos envies.",
       "primaryCta": "Démarrer un projet",
       "secondaryCta": "Nous contacter",
       "imgAlt": "Atelier {companyName}"
@@ -44,7 +44,7 @@
     },
     "story": {
       "title": "L'atelier Belmonte",
-      "text": "Depuis plus de 20 ans, {companyName} conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Nous intervenons auprès des particuliers et des professionnels pour créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent.",
+      "text": "{companyName} a été créée par Romain Belmonte, menuisier diplômé de la Philopatique initialement ingénieur d'affaires en bâtiment. Il conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Romain allie son expertise d'ingénieur à son savoir-faire artisanal afin de créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent.",
       "imgAlt": "L'atelier {companyName}"
     },
     "contactUs": {
