@@ -1,3 +1,5 @@
+import { ChevronDown } from 'lucide-react'
+
 interface SelectOption {
   value: string
   label: string
@@ -28,21 +30,28 @@ export default function Select({
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
-      <select
-        id={name}
-        name={name}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={`w-full border px-4 py-3 text-sm text-black focus:outline-none focus:border-black transition-colors appearance-none bg-white ${
-          error ? 'border-red-500' : 'border-gray-300'
-        }`}
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+      <div className="relative">
+        <select
+          id={name}
+          name={name}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className={`w-full border px-4 py-3 pr-10 text-sm text-black focus:outline-none focus:border-black transition-colors appearance-none bg-white ${
+            error ? 'border-red-500' : 'border-gray-300'
+          }`}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          size={16}
+          strokeWidth={1.5}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        />
+      </div>
       {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   )
