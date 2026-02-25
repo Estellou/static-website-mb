@@ -17,27 +17,27 @@
       "imgAlt": "Atelier {companyName}"
     },
     "services": {
-      "title": "Notre savoir-faire",
-      "etudes": "Études",
-      "conception": "Conception",
-      "realisation": "Réalisation",
-      "pose": "Pose"
+      "title": "Nos prestations sur mesure dans la région de Bordeaux",
+      "studies": "Études",
+      "design": "Conception",
+      "production": "Réalisation",
+      "installation": "Pose"
     },
     "projects": {
       "title": "Nos réalisations",
-      "cuisine": {
+      "kitchen": {
         "title": "Cuisine",
         "imgAlt": "Cuisine sur mesure"
       },
-      "bibliotheque": {
+      "bookcase": {
         "title": "Bibliothèque",
         "imgAlt": "Bibliothèque sur mesure"
       },
-      "dressing": {
+      "wardrobe": {
         "title": "Dressing",
         "imgAlt": "Dressing sur mesure"
       },
-      "autres": {
+      "other": {
         "title": "Autres",
         "imgAlt": "Autres réalisations"
       }
@@ -63,10 +63,10 @@
       "submitting": "Envoi en cours...",
       "wordCount": "{count} / {min} mots minimum",
       "fields": {
-        "firstName":   { "label": "Prénom" },
-        "familyName":  { "label": "Nom" },
-        "email":       { "label": "Adresse e-mail" },
-        "phone":       { "label": "Téléphone" },
+        "firstName": { "label": "Prénom" },
+        "familyName": { "label": "Nom" },
+        "email": { "label": "Adresse e-mail" },
+        "phone": { "label": "Téléphone" },
         "companyName": { "label": "Entreprise" },
         "projectType": { "label": "Type de projet" },
         "description": {
@@ -75,10 +75,10 @@
         }
       },
       "projectTypes": {
-        "cuisine":      "Cuisine",
-        "bibliotheque": "Bibliothèque",
-        "dressing":     "Dressing",
-        "autres":       "Autres"
+        "kitchen":   "Cuisine",
+        "bookcase":  "Bibliothèque",
+        "wardrobe":  "Dressing",
+        "other":     "Autres"
       },
       "success": {
         "title": "Message envoyé !",

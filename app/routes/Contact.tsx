@@ -11,7 +11,7 @@ const translations = fr.contact
 
 export default function Contact() {
   const [searchParams] = useSearchParams()
-  const projectType = searchParams.get('projectType') ?? 'autres'
+  const projectType = searchParams.get('projectType') ?? 'other'
 
   return (
     <>

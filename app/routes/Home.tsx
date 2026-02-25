@@ -29,10 +29,10 @@ export default function Home() {
           <Services
             title={translations.services.title}
             services={[
-              { icon: <Ruler size={32} strokeWidth={1.5} />,   text: translations.services.etudes },
-              { icon: <PenTool size={32} strokeWidth={1.5} />, text: translations.services.conception },
-              { icon: <Hammer size={32} strokeWidth={1.5} />,  text: translations.services.realisation },
-              { icon: <Wrench size={32} strokeWidth={1.5} />,  text: translations.services.pose },
+              { icon: <Ruler size={32} strokeWidth={1.5} />,   text: translations.services.studies },
+              { icon: <PenTool size={32} strokeWidth={1.5} />, text: translations.services.design },
+              { icon: <Hammer size={32} strokeWidth={1.5} />,  text: translations.services.production },
+              { icon: <Wrench size={32} strokeWidth={1.5} />,  text: translations.services.installation },
             ]}
           />
         </section>
@@ -41,10 +41,10 @@ export default function Home() {
           <Projects
             title={translations.projects.title}
             projects={[
-              { img: { src: '', alt: translations.projects.cuisine.imgAlt },     title: translations.projects.cuisine.title,     link: '/contact?projectType=cuisine' },
-              { img: { src: '', alt: translations.projects.bibliotheque.imgAlt }, title: translations.projects.bibliotheque.title, link: '/contact?projectType=bibliotheque' },
-              { img: { src: '', alt: translations.projects.dressing.imgAlt },    title: translations.projects.dressing.title,    link: '/contact?projectType=dressing' },
-              { img: { src: '', alt: translations.projects.autres.imgAlt },      title: translations.projects.autres.title,      link: '/contact?projectType=autres' },
+              { img: { src: '', alt: translations.projects.kitchen.imgAlt },  title: translations.projects.kitchen.title,  link: '/contact?projectType=kitchen' },
+              { img: { src: '', alt: translations.projects.bookcase.imgAlt }, title: translations.projects.bookcase.title, link: '/contact?projectType=bookcase' },
+              { img: { src: '', alt: translations.projects.wardrobe.imgAlt }, title: translations.projects.wardrobe.title, link: '/contact?projectType=wardrobe' },
+              { img: { src: '', alt: translations.projects.other.imgAlt },    title: translations.projects.other.title,    link: '/contact?projectType=other' },
             ]}
           />
         </section>

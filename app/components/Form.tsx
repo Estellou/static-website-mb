@@ -45,14 +45,14 @@ interface FormProps {
   defaultProjectType?: string
 }
 
-export default function Form({ defaultProjectType = 'autres' }: FormProps) {
+export default function Form({ defaultProjectType = 'other' }: FormProps) {
   const [data, setData] = useState<FormData>({
     firstName: '',
     familyName: '',
     email: '',
     phone: '',
     companyName: '',
-    projectType: defaultProjectType in translations.projectTypes ? defaultProjectType : 'autres',
+    projectType: defaultProjectType in translations.projectTypes ? defaultProjectType : 'other',
     description: '',
   })
   const [errors, setErrors] = useState<FormErrors>({})
