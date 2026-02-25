@@ -16,6 +16,7 @@ export default function Home() {
             text="Menuiserie Belmonte réalise sur mesure vos agencements et mobiliers. Chaque projet est pensé, conçu et fabriqué artisanalement pour s'adapter parfaitement à votre espace et à vos envies."
             primaryCta={{ label: 'Démarrer un projet', link: '/contact' }}
             secondaryCta={{ label: 'Nous contacter', link: '#contact' }}
+            img={{ src: '', alt: "Atelier Menuiserie Belmonte" }}
           />
         </section>
 
