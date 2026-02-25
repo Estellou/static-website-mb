@@ -49,6 +49,7 @@ export default function Home() {
             title="L'atelier Belmonte"
             text="Depuis plus de 20 ans, Menuiserie Belmonte conçoit et fabrique des pièces uniques dans son atelier. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail artisanal soigné. Nous intervenons auprès des particuliers et des professionnels pour créer des espaces sur mesure, du mobilier personnalisé et des agencements qui durent."
             imgPosition="left"
+            img={{ src: '', alt: "L'atelier Menuiserie Belmonte" }}
           />
         </section>
 
@@ -57,6 +58,7 @@ export default function Home() {
             title="Parlons de votre projet"
             text="Vous avez une idée, un espace à aménager, un mobilier à créer ? Contactez-nous par téléphone au 06 00 00 00 00 ou via notre formulaire de contact. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais."
             imgPosition="right"
+            img={{ src: '', alt: 'Contactez Menuiserie Belmonte' }}
             cta={{ label: 'Démarrer un projet', link: '/contact' }}
           />
         </section>

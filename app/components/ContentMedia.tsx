@@ -25,8 +25,12 @@ export default function ContentMedia({ title, text, img, imgPosition, cta }: Con
   )
 
   const imageBlock = img ? (
-    <div className="flex-1">
-      <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+    <div className="flex-1 aspect-[4/3]">
+      {img.src ? (
+        <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+      ) : (
+        <div className="w-full h-full bg-gray-100" />
+      )}
     </div>
   ) : null
 
