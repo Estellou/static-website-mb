@@ -124,7 +124,7 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 9 — Website live
-**Status:** To do
+**Status:** Deferred
 
 **Scope:**
 - Choose hosting solution (domain + CDN)
