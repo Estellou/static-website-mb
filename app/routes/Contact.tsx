@@ -5,7 +5,7 @@ import ContentMedia from '../components/ContentMedia'
 import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
 
-const t = fr.contact
+const translations = fr.contact
 
 export default function Contact() {
   const [searchParams] = useSearchParams()
@@ -18,10 +18,10 @@ export default function Contact() {
         <Form defaultProjectType={projectType} />
         <section id="contact">
           <ContentMedia
-            title={t.contactUs.title}
-            text={interpolate(t.contactUs.text, { phoneNumber: CONTACT.phoneNumber })}
+            title={translations.contactUs.title}
+            text={interpolate(translations.contactUs.text, { phoneNumber: CONTACT.phoneNumber })}
             imgPosition="right"
-            img={{ src: '', alt: interpolate(t.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
+            img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
           />
         </section>
       </main>

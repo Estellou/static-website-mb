@@ -3,10 +3,10 @@ import Input from './Input'
 import Select from './Select'
 import { fr, interpolate } from '../translations'
 
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string
+const FORMSPREE_ENDPOINT = importranslations.meta.env.VITE_FORMSPREE_ENDPOINT as string
 
-const t = fr.contact.form
-const PROJECT_TYPES = t.projectTypes
+const translations = fr.contactranslations.form
+const PROJECT_TYPES = translations.projectTypes
 const MIN_WORDS = 100
 
 interface FormData {
@@ -28,7 +28,7 @@ interface FormErrors {
 }
 
 function countWords(text: string): number {
-  return text.trim().split(/\s+/).filter((w) => w.length > 0).length
+  return textranslations.trim().split(/\s+/).filter((w) => w.length > 0).length
 }
 
 function validateEmail(email: string): boolean {
@@ -60,19 +60,19 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
 
   function validate(): FormErrors {
     const errs: FormErrors = {}
-    if (!data.firstName.trim()) errs.firstName = t.validation.firstNameRequired
-    if (!data.familyName.trim()) errs.familyName = t.validation.familyNameRequired
+    if (!data.firstName.trim()) errs.firstName = translations.validation.firstNameRequired
+    if (!data.familyName.trim()) errs.familyName = translations.validation.familyNameRequired
     if (!data.email.trim()) {
-      errs.email = t.validation.emailRequired
+      errs.email = translations.validation.emailRequired
     } else if (!validateEmail(data.email)) {
-      errs.email = t.validation.emailInvalid
+      errs.email = translations.validation.emailInvalid
     }
-    if (!data.phone.trim()) errs.phone = t.validation.phoneRequired
+    if (!data.phone.trim()) errs.phone = translations.validation.phoneRequired
     const wordCount = countWords(data.description)
     if (!data.description.trim()) {
-      errs.description = t.validation.descriptionRequired
+      errs.description = translations.validation.descriptionRequired
     } else if (wordCount < MIN_WORDS) {
-      errs.description = interpolate(t.validation.descriptionMinWords, {
+      errs.description = interpolate(translations.validation.descriptionMinWords, {
         min: String(MIN_WORDS),
         count: String(wordCount),
         plural: wordCount > 1 ? 's' : '',
@@ -81,10 +81,10 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     return errs
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: Reactranslations.FormEvent) {
     e.preventDefault()
     const errs = validate()
-    if (Object.keys(errs).length > 0) {
+    if (Objectranslations.keys(errs).length > 0) {
       setErrors(errs)
       return
     }
@@ -116,8 +116,8 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
     return (
       <section className="w-full px-6 py-24 md:px-16 lg:px-24">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-black mb-4">{t.success.title}</h2>
-          <p className="text-base text-gray-600">{t.success.text}</p>
+          <h2 className="text-3xl font-bold text-black mb-4">{translations.success.title}</h2>
+          <p className="text-base text-gray-600">{translations.success.text}</p>
         </div>
       </section>
     )
@@ -126,14 +126,14 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
   return (
     <section className="w-full px-6 py-20 md:px-16 lg:px-24">
       <div className="max-w-2xl">
-        <h2 className="text-3xl font-bold text-black mb-10">{t.title}</h2>
+        <h2 className="text-3xl font-bold text-black mb-10">{translations.title}</h2>
         {status === 'error' && (
-          <p className="text-sm text-red-500 mb-6">{t.error}</p>
+          <p className="text-sm text-red-500 mb-6">{translations.error}</p>
         )}
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Input
-              label={t.fields.firstName.label}
+              label={translations.fields.firstName.label}
               name="firstName"
               required
               value={data.firstName}
@@ -141,7 +141,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
               error={errors.firstName}
             />
             <Input
-              label={t.fields.familyName.label}
+              label={translations.fields.familyName.label}
               name="familyName"
               required
               value={data.familyName}
@@ -151,7 +151,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Input
-              label={t.fields.email.label}
+              label={translations.fields.email.label}
               name="email"
               type="email"
               required
@@ -160,7 +160,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
               error={errors.email}
             />
             <Input
-              label={t.fields.phone.label}
+              label={translations.fields.phone.label}
               name="phone"
               type="tel"
               required
@@ -170,13 +170,13 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
             />
           </div>
           <Input
-            label={t.fields.companyName.label}
+            label={translations.fields.companyName.label}
             name="companyName"
             value={data.companyName}
             onChange={set('companyName')}
           />
           <Select
-            label={t.fields.projectType.label}
+            label={translations.fields.projectType.label}
             name="projectType"
             options={PROJECT_TYPES}
             value={data.projectType}
@@ -184,17 +184,17 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
           />
           <div className="flex flex-col gap-1.5">
             <Input
-              label={t.fields.description.label}
+              label={translations.fields.description.label}
               name="description"
               multiline
               required
-              placeholder={t.fields.description.placeholder}
+              placeholder={translations.fields.description.placeholder}
               value={data.description}
               onChange={set('description')}
               error={errors.description}
             />
             <p className={`text-xs text-right ${wordCount >= MIN_WORDS ? 'text-green-600' : 'text-gray-400'}`}>
-              {interpolate(t.wordCount, { count: String(wordCount), min: String(MIN_WORDS) })}
+              {interpolate(translations.wordCount, { count: String(wordCount), min: String(MIN_WORDS) })}
             </p>
           </div>
           <button
@@ -202,7 +202,7 @@ export default function Form({ defaultProjectType = 'autres' }: FormProps) {
             disabled={status === 'submitting'}
             className="self-start bg-black text-white px-10 py-3 text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
           >
-            {status === 'submitting' ? t.submitting : t.submit}
+            {status === 'submitting' ? translations.submitting : translations.submit}
           </button>
         </form>
       </div>

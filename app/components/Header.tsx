@@ -6,7 +6,7 @@ import { CONTACT } from '../data/contact'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const t = fr.header
+  const translations = fr.header
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
@@ -16,25 +16,25 @@ export default function Header() {
         <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
-            alt={interpolate(t.logoAlt, { companyName: CONTACT.companyName })}
+            alt={interpolate(translations.logoAlt, { companyName: CONTACT.companyName })}
             className="h-10 w-auto"
           />
           <span className="text-sm font-semibold text-black tracking-wide uppercase">
-            {interpolate(t.companyName, { companyName: CONTACT.companyName })}
+            {interpolate(translations.companyName, { companyName: CONTACT.companyName })}
           </span>
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors">{t.nav.services}</a>
-          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors">{t.nav.projects}</a>
-          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors">{t.nav.story}</a>
-          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors">{t.nav.contact}</a>
+          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.services}</a>
+          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.projects}</a>
+          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.story}</a>
+          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors">{translations.nav.contact}</a>
           <Link
             to="/contact"
             className="inline-block bg-black text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition-colors"
           >
-            {t.cta}
+            {translations.cta}
           </Link>
         </nav>
 
@@ -54,16 +54,16 @@ export default function Header() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav className="md:hidden flex flex-col border-t border-gray-100 px-6 py-6 gap-5 bg-white">
-          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{t.nav.services}</a>
-          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
-          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{t.nav.story}</a>
-          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{t.nav.contact}</a>
+          <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.services}</a>
+          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.projects}</a>
+          <a href="#story"    className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.story}</a>
+          <a href="#contact"  className="text-sm text-gray-500 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>{translations.nav.contact}</a>
           <Link
             to="/contact"
             className="inline-block bg-black text-white px-6 py-3 text-sm font-medium text-center hover:bg-gray-800 transition-colors mt-2"
             onClick={() => setMenuOpen(false)}
           >
-            {t.cta}
+            {translations.cta}
           </Link>
         </nav>
       )}
