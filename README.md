@@ -168,7 +168,7 @@ See [`docs/plan/rollout-plan.md`](docs/plan/rollout-plan.md) for the full slice 
 | 6 | Home: Add logo | Done *(merged into Slice 2)* |
 | 7 | Home: Hero with photo | Done |
 | 8 | Home: Photos in ContentMedia blocks | Done |
-| 9 | Website hosted and live | Deferred |
+| 9 | Website hosted and live | Done |
 
 ### V1
 
@@ -198,4 +198,15 @@ See [`docs/plan/rollout-plan.md`](docs/plan/rollout-plan.md) for the full slice 
 
 ## Hosting
 
-To be defined. Domain purchase + CDN solution to explore.
+Hosted on **Cloudflare Pages** (free tier, global CDN).
+
+| Property | Value |
+|---|---|
+| Provider | Cloudflare Pages |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| SPA fallback | `public/_redirects` → `/* /index.html 200` |
+| Env var | `VITE_FORMSPREE_ENDPOINT` — set in Cloudflare Pages dashboard |
+| Source | GitHub repo, `main` branch |
+
+Domain: **menuiserie-belmonte.com** — registered via Cloudflare Registrar (at-cost pricing, auto-integrates with Pages DNS).

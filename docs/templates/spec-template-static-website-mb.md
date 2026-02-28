@@ -33,7 +33,7 @@
 | Content language | French |
 | Code & docs language | English |
 | Visual tone | Classic, artisanal, black and white |
-| Hosting | CDN (TBD) — no backend server |
+| Hosting | Cloudflare Pages — no backend server |
 
 ---
 
@@ -92,7 +92,7 @@ Static marketing page. Goal: present the company and drive visitors to the conta
 
 ### Architecture Overview
 
-Single-page React app. No backend. Hosted on a CDN (solution TBD). Contact form submitted via Formspree (third-party email service — endpoint stored in `VITE_FORMSPREE_ENDPOINT`). All state is local — no global store.
+Single-page React app. No backend. Hosted on Cloudflare Pages (free tier, global CDN, GitHub integration). Contact form submitted via Formspree (third-party email service — endpoint stored in `VITE_FORMSPREE_ENDPOINT`). All state is local — no global store.
 
 **Folder structure:**
 
@@ -170,7 +170,7 @@ docs/
 | 6 | Home: Add logo | Done *(merged into Slice 2)* |
 | 7 | Home: Hero with photo | Done |
 | 8 | Home: Photos in ContentMedia blocks | Done |
-| 9 | Website hosted and live | Deferred |
+| 9 | Website hosted and live | Done |
 
 ### V1
 
@@ -214,6 +214,8 @@ docs/
 | Logo format | PNG with white background — SVG/transparent version deferred to a future iteration |
 | Package manager | npm — pnpm rejected due to Volta shim issue at scaffolding time |
 | Rich text in translations | Split into `textBefore / linkLabel / linkUrl / textAfter` string keys + `ContentMedia.text: ReactNode` — HTML forbidden inside `fr.json` values |
+| Hosting | Cloudflare Pages — free tier, global CDN, integrates with GitHub; `public/_redirects` provides SPA fallback (`/* /index.html 200`) so React Router handles all routes on direct load/refresh |
+| Domain | `menuiserie-belmonte.com` — registered via Cloudflare Registrar (at-cost pricing, auto-integrates with Cloudflare Pages DNS) |
 
 ---
 
