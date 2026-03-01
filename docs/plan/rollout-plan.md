@@ -124,11 +124,19 @@ Living history of all delivery slices: scope, status, and decisions made during 
 ---
 
 ### Slice 9 — Website live
-**Status:** Deferred
+**Status:** Done
 
 **Scope:**
 - Choose hosting solution (domain + CDN)
 - Deploy the website and make it publicly accessible
+
+**Decisions:**
+- Hosting: **Cloudflare Pages** (free tier, global CDN, auto-deploys on `git push` to `main`)
+- Source: GitHub repo `Estellou/static-website-mb`, `main` branch
+- Build command: `npm run build` — output directory: `dist`
+- Domain: **menuiserie-belmonte.com** — registered via Cloudflare Registrar (at-cost pricing, DNS auto-configured)
+- SPA routing: `dist/404.html` fallback (build script copies `dist/index.html` → `dist/404.html`); `_redirects` approach rejected by Cloudflare validator with error 10021
+- `VITE_FORMSPREE_ENDPOINT` set as environment variable in Cloudflare Pages dashboard
 
 ---
 
