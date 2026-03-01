@@ -11,7 +11,7 @@
   "home": {
     "hero": {
       "title": "Votre menuisier sur Bordeaux",
-      "textBefore": "De la matière à la création. ",
+      "textBefore": "De la matière à la création, ",
       "textAfter": " réalise sur mesure vos agencements intérieurs et mobiliers bois. Chaque projet est pensé, conçu et fabriqué pour s'adapter parfaitement à votre espace et à vos envies.",
       "primaryCta": "Démarrer un projet",
       "secondaryCta": "Nous contacter",
@@ -22,11 +22,11 @@
       "studies": "Études",
       "studiesDescription": "Analyse de votre espace et de vos besoins.",
       "design": "Conception",
-      "designDescription": "Plans techniques et choix des matériaux sur mesure.",
+      "designDescription": "Plans techniques et choix des matériaux.",
       "production": "Réalisation",
-      "productionDescription": "Fabrication artisanale en bois massif ou en panneau.",
+      "productionDescription": "Fabrication sur mesure en bois massif ou en panneau.",
       "installation": "Pose",
-      "installationDescription": "Installation soignée, dans le respect des délais."
+      "installationDescription": "Installation soignée."
     },
     "projects": {
       "title": "Nos réalisations",
@@ -52,7 +52,7 @@
       "textBefore": " a été créée par Romain Belmonte, menuisier diplômé de la ",
       "schoolName": "Philomathique",
       "schoolUrl": "https://philomathiquebordeaux.com/",
-      "textAfter": " initialement ingénieur d'affaires en bâtiment. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail fait main et soigné. Passionné, Romain allie son expertise d'ingénieur à son savoir-faire de menuisier afin de créer des aménagements intérieurs sur mesure, du mobilier bois personnalisé et des menuiseries qui durent.",
+      "textAfter": " initialement ingénieur d'affaires en bâtiment. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail fait main et soigné. Passionné, Romain allie son expertise d'ingénieur à son savoir-faire de menuisier afin de créer des aménagements intérieurs sur mesure, du mobilier bois personnalisé et des agencements qui durent.",
       "imgAlt": "L'atelier {companyName}"
     },
     "contactUs": {
