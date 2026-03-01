@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 interface Service {
   icon: ReactNode
   text: string
+  description: string
 }
 
 interface ServicesProps {
@@ -18,7 +19,8 @@ export default function Services({ title, services }: ServicesProps) {
         {services.map((service, index) => (
           <div key={index} className="flex flex-col items-center text-center flex-1 gap-4">
             <div className="text-white">{service.icon}</div>
-            <p className="text-base text-gray-300">{service.text}</p>
+            <p className="text-base font-semibold">{service.text}</p>
+            <p className="text-sm text-gray-400">{service.description}</p>
           </div>
         ))}
       </div>

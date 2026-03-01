@@ -28,10 +28,10 @@ export default function Home() {
           <Services
             title={translations.services.title}
             services={[
-              { icon: <Ruler size={32} strokeWidth={1.5} />,       text: translations.services.studies },
-              { icon: <NotebookPen size={32} strokeWidth={1.5} />, text: translations.services.design },
-              { icon: <Axe size={32} strokeWidth={1.5} />,         text: translations.services.production },
-              { icon: <Hammer size={32} strokeWidth={1.5} />,      text: translations.services.installation },
+              { icon: <Ruler size={32} strokeWidth={1.5} />,       text: translations.services.studies,      description: translations.services.studiesDescription },
+              { icon: <NotebookPen size={32} strokeWidth={1.5} />, text: translations.services.design,       description: translations.services.designDescription },
+              { icon: <Axe size={32} strokeWidth={1.5} />,         text: translations.services.production,   description: translations.services.productionDescription },
+              { icon: <Hammer size={32} strokeWidth={1.5} />,      text: translations.services.installation, description: translations.services.installationDescription },
             ]}
           />
         </section>
@@ -70,22 +70,22 @@ export default function Home() {
           />
         </section>
 
-        <section id="contact">
-          <ContentMedia
-            title={translations.contactUs.title}
-            text={translations.contactUs.text}
-            imgPosition="right"
-            img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
-          >
-            <HorizontalContact
-              items={[
-                { icon: <Phone size={20} strokeWidth={1.5} />, label: translations.contactUs.phoneLabel, value: CONTACT.phoneNumber },
-                { icon: <Mail size={20} strokeWidth={1.5} />,  label: translations.contactUs.emailLabel,  value: CONTACT.email },
-              ]}
-            />
-          </ContentMedia>
-        </section>
       </main>
+      <footer id="contact">
+        <ContentMedia
+          title={translations.contactUs.title}
+          text={translations.contactUs.text}
+          imgPosition="right"
+          img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
+        >
+          <HorizontalContact
+            items={[
+              { icon: <Phone size={20} strokeWidth={1.5} />, label: translations.contactUs.phoneLabel, value: CONTACT.phoneNumber },
+              { icon: <Mail size={20} strokeWidth={1.5} />,  label: translations.contactUs.emailLabel,  value: CONTACT.email },
+            ]}
+          />
+        </ContentMedia>
+      </footer>
     </>
   )
 }

@@ -20,9 +20,13 @@
     "services": {
       "title": "Nos prestations",
       "studies": "Études",
+      "studiesDescription": "Analyse de votre espace et de vos besoins.",
       "design": "Conception",
+      "designDescription": "Plans techniques et choix des matériaux sur mesure.",
       "production": "Réalisation",
-      "installation": "Pose"
+      "productionDescription": "Fabrication artisanale en bois massif ou en panneau.",
+      "installation": "Pose",
+      "installationDescription": "Installation soignée, dans le respect des délais."
     },
     "projects": {
       "title": "Nos réalisations",
