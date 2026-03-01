@@ -7,12 +7,12 @@ import ContentMedia from '../components/ContentMedia'
 import HorizontalContact from '../components/HorizontalContact'
 import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
-import chambreCarre from '../images/chambreCarre.png'
-import cuisineMeuble from '../images/cuisineMeuble.jpg'
-import sale2bain from '../images/salle2bain.png'
-import dressing from '../images/dressing.png'
-import portrait from '../images/portrait.jpeg'
-import atelier from '../images/atelier.png'
+import chambreCarre from '../images/chambreCarre.webp'
+import cuisineMeuble from '../images/cuisineMeuble.webp'
+import sale2bain from '../images/salle2bain.webp'
+import dressing from '../images/dressing.webp'
+import portrait from '../images/portrait.webp'
+import atelier from '../images/atelier.webp'
 
 const translations = fr.home
 
