@@ -7,6 +7,12 @@ import ContentMedia from '../components/ContentMedia'
 import HorizontalContact from '../components/HorizontalContact'
 import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
+import chambreCarre from '../images/chambreCarre.png'
+import cuisineMeuble from '../images/cuisineMeuble.jpg'
+import sale2bain from '../images/salle2bain.png'
+import dressing from '../images/dressing.png'
+import portrait from '../images/portrait.jpeg'
+import atelier from '../images/atelier.png'
 
 const translations = fr.home
 
@@ -66,19 +72,19 @@ export default function Home() {
             title={translations.projects.title}
             projects={[
               {
-                img: { src: '', alt: translations.projects.kitchen.imgAlt },
+                img: { src: cuisineMeuble, alt: translations.projects.kitchen.imgAlt },
                 title: translations.projects.kitchen.title,
               },
               {
-                img: { src: '', alt: translations.projects.bookcase.imgAlt },
-                title: translations.projects.bookcase.title,
-              },
-              {
-                img: { src: '', alt: translations.projects.wardrobe.imgAlt },
+                img: { src: dressing, alt: translations.projects.other.imgAlt },
                 title: translations.projects.wardrobe.title,
               },
               {
-                img: { src: '', alt: translations.projects.other.imgAlt },
+                img: { src: sale2bain, alt: translations.projects.bathroom.imgAlt },
+                title: translations.projects.bathroom.title,
+              },
+              {
+                img: { src: chambreCarre, alt: translations.projects.bookcase.imgAlt },
                 title: translations.projects.other.title,
               },
             ]}
@@ -105,7 +111,7 @@ export default function Home() {
             }
             imgPosition="left"
             img={{
-              src: '',
+              src: atelier,
               alt: interpolate(translations.story.imgAlt, { companyName: CONTACT.companyName }),
             }}
           />
@@ -117,7 +123,7 @@ export default function Home() {
           text={translations.contactUs.text}
           imgPosition="right"
           img={{
-            src: '',
+            src: portrait,
             alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }),
           }}
         >

@@ -43,6 +43,10 @@
         "title": "Dressing",
         "imgAlt": "Dressing sur mesure"
       },
+      "bathroom": {
+        "title": "Salle de bain",
+        "imgAlt": "Salle de bain sur mesure"
+      },
       "other": {
         "title": "Autres",
         "imgAlt": "Autres réalisations"
