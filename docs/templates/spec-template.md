@@ -29,10 +29,12 @@
      Add constraints that shape the work (audience, platform, language, budget, etc.). -->
 
 **In scope:**
+
 - [What is included — e.g. "Home page + Contact page"]
 - [...]
 
 **Out of scope:**
+
 - [What is explicitly excluded — e.g. "CMS, user authentication, blog"]
 - [...]
 
@@ -44,11 +46,11 @@
      Library    → Public API surface, Bundle size, Peer dependencies
      Feature    → Affected systems, Rollout strategy, Backwards compatibility -->
 
-| Property | Value |
-|---|---|
-| [e.g. Target audience] | [e.g. Individual clients and businesses in the Bordeaux area] |
-| [e.g. Content language] | [e.g. French] |
-| [e.g. Visual tone] | [e.g. Classic, black and white] |
+| Property                | Value                                                           |
+| ----------------------- | --------------------------------------------------------------- |
+| [e.g. Target audience]  | [e.g. Individual clients and businesses in the Le Bouscat area] |
+| [e.g. Content language] | [e.g. French]                                                   |
+| [e.g. Visual tone]      | [e.g. Classic, black and white]                                 |
 
 ---
 
@@ -72,8 +74,8 @@
 <!-- ROLE: Centralises runtime data reused across the project (contact info, config, feature flags).
      Change it in one place and it propagates everywhere. -->
 
-| File | Exports | Purpose |
-|---|---|---|
+| File     | Exports           | Purpose                                                  |
+| -------- | ----------------- | -------------------------------------------------------- |
 | [`path`] | [`CONSTANT_NAME`] | [What it holds — e.g. "companyName, phoneNumber, email"] |
 
 ### Features
@@ -93,14 +95,14 @@
 
 [One-sentence description of the feature's purpose and value]
 
-| Element | Description |
-|---|---|
+| Element                                    | Description                                                    |
+| ------------------------------------------ | -------------------------------------------------------------- |
 | [Sub-feature / section / field / endpoint] | [What it does — include key behaviour, states, or constraints] |
 
-**Assets:** *(frontend only — remove if not applicable)*
+**Assets:** _(frontend only — remove if not applicable)_
 
-| Asset | Status | Notes |
-|---|---|---|
+| Asset             | Status           | Notes                             |
+| ----------------- | ---------------- | --------------------------------- |
 | [e.g. Hero image] | [Provided / TBD] | [Format, dimensions, constraints] |
 
 ---
@@ -138,13 +140,13 @@ Contact form submitted via Formspree. All state is local (no global store)."]
      (e.g. Tailwind v3 vs v4, React Router v6 vs v7).
      List only what is actually installed. -->
 
-| Tool | Purpose | Version |
-|---|---|---|
-| [e.g. React] | UI framework | [vX] |
-| [e.g. Tailwind CSS] | Styling | [vX] |
-| [e.g. React Router] | Routing | [vX] |
-| [e.g. npm] | Package manager | — |
-| [e.g. ESLint + Prettier] | Code quality | — |
+| Tool                     | Purpose         | Version |
+| ------------------------ | --------------- | ------- |
+| [e.g. React]             | UI framework    | [vX]    |
+| [e.g. Tailwind CSS]      | Styling         | [vX]    |
+| [e.g. React Router]      | Routing         | [vX]    |
+| [e.g. npm]               | Package manager | —       |
+| [e.g. ESLint + Prettier] | Code quality    | —       |
 
 ### Standards
 
@@ -158,6 +160,7 @@ Contact form submitted via Formspree. All state is local (no global store)."]
 **Inherited conventions:** [e.g. "See `CLAUDE.md`" / "See `scripts/react-agent.mjs`" / "None — all rules listed below"]
 
 **Project-specific rules:**
+
 - [e.g. "`verbatimModuleSyntax` is on: use `import { type X }` for all type-only imports"]
 - [e.g. "All icons: `strokeWidth={1.5}` to match the logo line weight"]
 - [e.g. "No hardcoded color or font values outside the CSS theme variables"]
@@ -169,8 +172,8 @@ Contact form submitted via Formspree. All state is local (no global store)."]
      Prevents Claude from repeating the same mistakes across sessions.
      Add a row whenever a bug is traced to a platform or framework quirk. -->
 
-| Pitfall | Fix |
-|---|---|
+| Pitfall                                                                  | Fix                                                                           |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | [e.g. "`height: 100%` inside an `aspect-ratio` container resolves to 0"] | [e.g. "Apply `bg-*` / `object-cover` directly on the `aspect-[x/y]` element"] |
 
 ---
@@ -191,21 +194,21 @@ Contact form submitted via Formspree. All state is local (no global store)."]
 
 ### MVP
 
-| # | Slice | Status |
-|---|---|---|
-| 1 | [Smallest shippable increment — e.g. "Home: Hero + Services + Contact block (no images)"] | Pending |
-| 2 | [Next increment] | Pending |
+| #   | Slice                                                                                     | Status  |
+| --- | ----------------------------------------------------------------------------------------- | ------- |
+| 1   | [Smallest shippable increment — e.g. "Home: Hero + Services + Contact block (no images)"] | Pending |
+| 2   | [Next increment]                                                                          | Pending |
 
 ### V1
 
-| # | Slice | Status |
-|---|---|---|
+| #   | Slice         | Status  |
+| --- | ------------- | ------- |
 | [#] | [Deliverable] | Pending |
 
 ### Post-V1
 
-| Change | Status |
-|---|---|
+| Change                                               | Status  |
+| ---------------------------------------------------- | ------- |
 | [Refinement or addition discovered during execution] | Pending |
 
 ---
@@ -217,8 +220,8 @@ Contact form submitted via Formspree. All state is local (no global store)."]
      Add a row each time a non-obvious decision is made —
      especially when an alternative was considered and rejected. -->
 
-| Decision | Detail |
-|---|---|
+| Decision                                   | Detail                                                                                                 |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | [What was decided — e.g. "Email provider"] | [Why, and what was rejected — e.g. "Formspree: no backend needed; rejected Mailgun (requires server)"] |
 
 ---
