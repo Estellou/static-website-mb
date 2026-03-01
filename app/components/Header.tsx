@@ -11,7 +11,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
       <div className="flex items-center justify-between px-6 py-3 md:px-16 lg:px-24">
-
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1.5">
           <img
@@ -20,8 +19,12 @@ export default function Header() {
             className="h-[75px] w-auto"
           />
           <div className="flex flex-col justify-center h-[75px]">
-            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">Menuiserie</span>
-            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">Belmonte</span>
+            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">
+              Menuiserie
+            </span>
+            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">
+              Belmonte
+            </span>
           </div>
         </Link>
 
@@ -29,6 +32,9 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <a href="#services" className="text-sm text-gray-500 hover:text-black transition-colors">
             {translations.nav.features}
+          </a>
+          <a href="#projects" className="text-sm text-gray-500 hover:text-black transition-colors">
+            {translations.nav.projects}
           </a>
           <a href="#story" className="text-sm text-gray-500 hover:text-black transition-colors">
             {translations.nav.story}
@@ -48,9 +54,15 @@ export default function Header() {
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={menuOpen}
         >
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span
+            className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-black transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+          />
         </button>
       </div>
 

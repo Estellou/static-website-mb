@@ -4,6 +4,7 @@
     "companyName": "{companyName}",
     "nav": {
       "features": "Nos prestations",
+      "projects": "Nos réalisations",
       "story": "Notre histoire"
     },
     "cta": "Démarrer un projet"
