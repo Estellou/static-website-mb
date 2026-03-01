@@ -98,7 +98,7 @@ Contact info (name, phone, email) lives in `app/data/contact.ts` as `CONTACT`.
 | Provider | Cloudflare Pages (free tier) |
 | Build command | `npm run build` |
 | Output directory | `dist` |
-| SPA fallback | `public/_redirects` → `/* /index.html 200` |
+| SPA fallback | Build copies `dist/index.html` → `dist/404.html` (Cloudflare validator rejects `_redirects` for SPAs, error 10021) |
 | Env var | `VITE_FORMSPREE_ENDPOINT` set in Cloudflare Pages dashboard |
 | Domain | `menuiserie-belmonte.com` |
 | Source | GitHub repo (`estellouhou/static-website-mb`), `main` branch |

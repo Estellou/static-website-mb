@@ -205,7 +205,7 @@ Hosted on **Cloudflare Pages** (free tier, global CDN).
 | Provider | Cloudflare Pages |
 | Build command | `npm run build` |
 | Output directory | `dist` |
-| SPA fallback | `public/_redirects` → `/* /index.html 200` |
+| SPA fallback | Build copies `dist/index.html` → `dist/404.html` |
 | Env var | `VITE_FORMSPREE_ENDPOINT` — set in Cloudflare Pages dashboard |
 | Source | GitHub repo, `main` branch |
 

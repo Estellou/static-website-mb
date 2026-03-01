@@ -214,7 +214,7 @@ docs/
 | Logo format | PNG with white background — SVG/transparent version deferred to a future iteration |
 | Package manager | npm — pnpm rejected due to Volta shim issue at scaffolding time |
 | Rich text in translations | Split into `textBefore / linkLabel / linkUrl / textAfter` string keys + `ContentMedia.text: ReactNode` — HTML forbidden inside `fr.json` values |
-| Hosting | Cloudflare Pages — free tier, global CDN, integrates with GitHub; `public/_redirects` provides SPA fallback (`/* /index.html 200`) so React Router handles all routes on direct load/refresh |
+| Hosting | Cloudflare Pages — free tier, global CDN, integrates with GitHub; SPA fallback via `dist/404.html` (build copies `dist/index.html` → `dist/404.html`); `_redirects` rejected by Cloudflare validator with error 10021 |
 | Domain | `menuiserie-belmonte.com` — registered via Cloudflare Registrar (at-cost pricing, auto-integrates with Cloudflare Pages DNS) |
 
 ---
