@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import './styles/global.css'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './routes/Home'
-import Contact from './routes/Contact'
 
 function RootLayout() {
   return (
