@@ -20,8 +20,8 @@ export default function Header() {
             className="h-[75px] w-auto"
           />
           <div className="flex flex-col justify-center h-[75px]">
-            <span className="text-xs font-semibold text-black tracking-wide uppercase leading-tight">Menuiserie</span>
-            <span className="text-xs font-semibold text-black tracking-wide uppercase leading-tight">Belmonte</span>
+            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">Menuiserie</span>
+            <span className="text-xs font-bold text-black tracking-wide uppercase leading-tight">Belmonte</span>
           </div>
         </Link>
 

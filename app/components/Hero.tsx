@@ -1,8 +1,9 @@
+import { type ReactNode } from 'react'
 import CtaLink from './CtaLink'
 
 interface HeroProps {
   title: string
-  text: string
+  text: ReactNode
   primaryCta: { label: string; link: string }
   secondaryCta?: { label: string; link: string }
   img?: { src: string; alt: string }

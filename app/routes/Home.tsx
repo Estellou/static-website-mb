@@ -18,7 +18,7 @@ export default function Home() {
         <section id="hero">
           <Hero
             title={translations.hero.title}
-            text={interpolate(translations.hero.text, { companyName: CONTACT.companyName })}
+            text={<>{translations.hero.textBefore}<strong>{CONTACT.companyName}</strong>{translations.hero.textAfter}</>}
             primaryCta={{ label: translations.hero.primaryCta, link: '#contact' }}
             img={{ src: '', alt: interpolate(translations.hero.imgAlt, { companyName: CONTACT.companyName }) }}
           />
@@ -53,7 +53,7 @@ export default function Home() {
             title={translations.story.title}
             text={
               <>
-                {interpolate(translations.story.textBefore, { companyName: CONTACT.companyName })}
+                <strong>{CONTACT.companyName}</strong>{translations.story.textBefore}
                 <a
                   href={translations.story.schoolUrl}
                   target="_blank"

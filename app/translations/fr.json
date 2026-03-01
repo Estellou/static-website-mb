@@ -10,14 +10,15 @@
   },
   "home": {
     "hero": {
-      "title": "De la matière à la création",
-      "text": "{companyName} réalise sur mesure vos agencements et mobiliers bois sur la région de Bordeaux (33). Chaque projet est pensé, conçu et fabriqué pour s'adapter parfaitement à votre espace et à vos envies.",
+      "title": "Votre menuisier sur Bordeaux",
+      "textBefore": "De la matière à la création. ",
+      "textAfter": " réalise sur mesure vos agencements intérieurs et mobiliers bois. Chaque projet est pensé, conçu et fabriqué pour s'adapter parfaitement à votre espace et à vos envies.",
       "primaryCta": "Démarrer un projet",
       "secondaryCta": "Nous contacter",
       "imgAlt": "Atelier {companyName}"
     },
     "services": {
-      "title": "Nos prestations sur mesure sur la région de Bordeaux (33)",
+      "title": "Nos prestations",
       "studies": "Études",
       "design": "Conception",
       "production": "Réalisation",
@@ -44,10 +45,10 @@
     },
     "story": {
       "title": "Notre histoire",
-      "textBefore": "{companyName} a été créée par Romain Belmonte, menuisier diplômé de la ",
+      "textBefore": " a été créée par Romain Belmonte, menuisier diplômé de la ",
       "schoolName": "Philomathique",
       "schoolUrl": "https://philomathiquebordeaux.com/",
-      "textAfter": " initialement ingénieur d'affaires en bâtiment. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail fait main et soigné. Passionné, Romain allie son expertise d'ingénieur à son savoir-faire afin de créer des aménagements intérieurs sur mesure, du mobilier bois personnalisé et des menuiseries qui durent.",
+      "textAfter": " initialement ingénieur d'affaires en bâtiment. Chaque réalisation naît d'une écoute attentive, d'un dessin précis et d'un travail fait main et soigné. Passionné, Romain allie son expertise d'ingénieur à son savoir-faire de menuisier afin de créer des aménagements intérieurs sur mesure, du mobilier bois personnalisé et des menuiseries qui durent.",
       "imgAlt": "L'atelier {companyName}"
     },
     "contactUs": {
