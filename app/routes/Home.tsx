@@ -1,4 +1,4 @@
-import { Ruler, PenTool, Hammer, Wrench, Phone, Mail } from 'lucide-react'
+import { Ruler, NotebookPen, Axe, Hammer, Phone, Mail } from 'lucide-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -28,10 +28,10 @@ export default function Home() {
           <Services
             title={translations.services.title}
             services={[
-              { icon: <Ruler size={32} strokeWidth={1.5} />,   text: translations.services.studies },
-              { icon: <PenTool size={32} strokeWidth={1.5} />, text: translations.services.design },
-              { icon: <Hammer size={32} strokeWidth={1.5} />,  text: translations.services.production },
-              { icon: <Wrench size={32} strokeWidth={1.5} />,  text: translations.services.installation },
+              { icon: <Ruler size={32} strokeWidth={1.5} />,       text: translations.services.studies },
+              { icon: <NotebookPen size={32} strokeWidth={1.5} />, text: translations.services.design },
+              { icon: <Axe size={32} strokeWidth={1.5} />,         text: translations.services.production },
+              { icon: <Hammer size={32} strokeWidth={1.5} />,      text: translations.services.installation },
             ]}
           />
         </section>
