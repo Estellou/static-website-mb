@@ -1,4 +1,4 @@
-import { Ruler, NotebookPen, Axe, Hammer, Phone, Mail } from 'lucide-react'
+import { Calculator, Laptop, Hammer, Drill, Phone, Mail } from 'lucide-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -18,9 +18,18 @@ export default function Home() {
         <section id="hero">
           <Hero
             title={translations.hero.title}
-            text={<>{translations.hero.textBefore}<strong>{CONTACT.companyName}</strong>{translations.hero.textAfter}</>}
+            text={
+              <>
+                {translations.hero.textBefore}
+                <strong>{CONTACT.companyName}</strong>
+                {translations.hero.textAfter}
+              </>
+            }
             primaryCta={{ label: translations.hero.primaryCta, link: '#contact' }}
-            img={{ src: '', alt: interpolate(translations.hero.imgAlt, { companyName: CONTACT.companyName }) }}
+            img={{
+              src: '',
+              alt: interpolate(translations.hero.imgAlt, { companyName: CONTACT.companyName }),
+            }}
           />
         </section>
 
@@ -28,10 +37,26 @@ export default function Home() {
           <Services
             title={translations.services.title}
             services={[
-              { icon: <Ruler size={32} strokeWidth={1.5} />,       text: translations.services.studies,      description: translations.services.studiesDescription },
-              { icon: <NotebookPen size={32} strokeWidth={1.5} />, text: translations.services.design,       description: translations.services.designDescription },
-              { icon: <Axe size={32} strokeWidth={1.5} />,         text: translations.services.production,   description: translations.services.productionDescription },
-              { icon: <Hammer size={32} strokeWidth={1.5} />,      text: translations.services.installation, description: translations.services.installationDescription },
+              {
+                icon: <Calculator size={32} strokeWidth={1.5} />,
+                text: translations.services.studies,
+                description: translations.services.studiesDescription,
+              },
+              {
+                icon: <Laptop size={32} strokeWidth={1.5} />,
+                text: translations.services.design,
+                description: translations.services.designDescription,
+              },
+              {
+                icon: <Hammer size={32} strokeWidth={1.5} />,
+                text: translations.services.production,
+                description: translations.services.productionDescription,
+              },
+              {
+                icon: <Drill size={32} strokeWidth={1.5} />,
+                text: translations.services.installation,
+                description: translations.services.installationDescription,
+              },
             ]}
           />
         </section>
@@ -40,10 +65,22 @@ export default function Home() {
           <Projects
             title={translations.projects.title}
             projects={[
-              { img: { src: '', alt: translations.projects.kitchen.imgAlt },  title: translations.projects.kitchen.title },
-              { img: { src: '', alt: translations.projects.bookcase.imgAlt }, title: translations.projects.bookcase.title },
-              { img: { src: '', alt: translations.projects.wardrobe.imgAlt }, title: translations.projects.wardrobe.title },
-              { img: { src: '', alt: translations.projects.other.imgAlt },    title: translations.projects.other.title },
+              {
+                img: { src: '', alt: translations.projects.kitchen.imgAlt },
+                title: translations.projects.kitchen.title,
+              },
+              {
+                img: { src: '', alt: translations.projects.bookcase.imgAlt },
+                title: translations.projects.bookcase.title,
+              },
+              {
+                img: { src: '', alt: translations.projects.wardrobe.imgAlt },
+                title: translations.projects.wardrobe.title,
+              },
+              {
+                img: { src: '', alt: translations.projects.other.imgAlt },
+                title: translations.projects.other.title,
+              },
             ]}
           />
         </section>
@@ -53,7 +90,8 @@ export default function Home() {
             title={translations.story.title}
             text={
               <>
-                <strong>{CONTACT.companyName}</strong>{translations.story.textBefore}
+                <strong>{CONTACT.companyName}</strong>
+                {translations.story.textBefore}
                 <a
                   href={translations.story.schoolUrl}
                   target="_blank"
@@ -66,22 +104,35 @@ export default function Home() {
               </>
             }
             imgPosition="left"
-            img={{ src: '', alt: interpolate(translations.story.imgAlt, { companyName: CONTACT.companyName }) }}
+            img={{
+              src: '',
+              alt: interpolate(translations.story.imgAlt, { companyName: CONTACT.companyName }),
+            }}
           />
         </section>
-
       </main>
       <footer id="contact">
         <ContentMedia
           title={translations.contactUs.title}
           text={translations.contactUs.text}
           imgPosition="right"
-          img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
+          img={{
+            src: '',
+            alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }),
+          }}
         >
           <HorizontalContact
             items={[
-              { icon: <Phone size={20} strokeWidth={1.5} />, label: translations.contactUs.phoneLabel, value: CONTACT.phoneNumber },
-              { icon: <Mail size={20} strokeWidth={1.5} />,  label: translations.contactUs.emailLabel,  value: CONTACT.email },
+              {
+                icon: <Phone size={20} strokeWidth={1.5} />,
+                label: translations.contactUs.phoneLabel,
+                value: CONTACT.phoneNumber,
+              },
+              {
+                icon: <Mail size={20} strokeWidth={1.5} />,
+                label: translations.contactUs.emailLabel,
+                value: CONTACT.email,
+              },
             ]}
           />
         </ContentMedia>
