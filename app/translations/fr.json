@@ -3,11 +3,11 @@
     "logoAlt": "{companyName} logo",
     "companyName": "{companyName}",
     "nav": {
-      "features": "Nos prestations",
-      "projects": "Nos réalisations",
-      "story": "Notre histoire"
+      "features": "Les prestations",
+      "projects": "Les réalisations",
+      "story": "A propos"
     },
-    "cta": "Démarrer un projet"
+    "cta": "Contactez-moi"
   },
   "home": {
     "hero": {
@@ -15,11 +15,11 @@
       "textBefore": "De la matière à la création, ",
       "textAfter": " réalise sur mesure vos agencements intérieurs et mobiliers bois. Chaque projet est pensé, conçu et fabriqué pour s'adapter parfaitement à votre espace et à vos envies.",
       "primaryCta": "Démarrer un projet",
-      "secondaryCta": "Nous contacter",
+      "secondaryCta": "Me contacter",
       "imgAlt": "Atelier {companyName}"
     },
     "services": {
-      "title": "Nos prestations",
+      "title": "Les prestations",
       "studies": "Études",
       "studiesDescription": "Analyse de votre espace et de vos besoins.",
       "design": "Conception",
@@ -30,7 +30,7 @@
       "installationDescription": "Installation soignée."
     },
     "projects": {
-      "title": "Nos réalisations",
+      "title": "Les réalisations",
       "kitchen": {
         "title": "Cuisine",
         "imgAlt": "Cuisine sur mesure"
@@ -53,7 +53,7 @@
       }
     },
     "story": {
-      "title": "Notre histoire",
+      "title": "A propos",
       "textBefore": " a été créée par Romain Belmonte, menuisier diplômé de la ",
       "schoolName": "Philomathique",
       "schoolUrl": "https://philomathiquebordeaux.com/",
@@ -62,16 +62,16 @@
     },
     "contactUs": {
       "title": "Parlons de votre projet",
-      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? N'hésitez pas à nous contacter, nous sommes à votre écoute. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
+      "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? N'hésitez pas à me contacter, je suis à votre écoute. J'étudie chaque demande avec attention et vous réponds dans les plus brefs délais.",
       "phoneLabel": "Téléphone",
       "emailLabel": "E-mail",
       "imgAlt": "Contactez {companyName}",
-      "cta": "Démarrer un projet"
+      "cta": "Contactez-moi"
     }
   },
   "contact": {
     "form": {
-      "title": "Démarrer un projet",
+      "title": "Contactez-moi",
       "submit": "Envoyer ma demande",
       "submitting": "Envoi en cours...",
       "wordCount": "{count} / {min} mots minimum",
