@@ -65,6 +65,7 @@
       "text": "Vous avez une idée, un espace à aménager, un mobilier à créer ? N'hésitez pas à me contacter, je suis à votre écoute. J'étudie chaque demande avec attention et vous réponds dans les plus brefs délais.",
       "phoneLabel": "Téléphone",
       "emailLabel": "E-mail",
+      "instagram": "Instagram",
       "imgAlt": "Contactez {companyName}",
       "cta": "Contactez-moi"
     }
@@ -113,6 +114,7 @@
       "text": "Vous préférez nous contacter directement ? Nous sommes disponibles par téléphone ou par e-mail. Nous étudions chaque demande avec attention et vous répondons dans les plus brefs délais.",
       "phoneLabel": "Téléphone",
       "emailLabel": "E-mail",
+      "instagram": "Instagram",
       "imgAlt": "Contactez {companyName}"
     }
   }

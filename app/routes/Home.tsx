@@ -1,4 +1,4 @@
-import { Calculator, Laptop, Hammer, Drill, Phone, Mail } from 'lucide-react'
+import { Calculator, Laptop, Hammer, Drill, Phone, Mail, Instagram } from 'lucide-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -138,6 +138,12 @@ export default function Home() {
                 icon: <Mail size={20} strokeWidth={1.5} />,
                 label: translations.contactUs.emailLabel,
                 value: CONTACT.email,
+              },
+              {
+                icon: <Instagram size={20} strokeWidth={1.5} />,
+                label: translations.contactUs.instagram,
+                value: CONTACT.instagram,
+                href: 'https://www.instagram.com/menuiserie_belmonte',
               },
             ]}
           />

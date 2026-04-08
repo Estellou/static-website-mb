@@ -1,4 +1,4 @@
-import { Phone, Mail } from 'lucide-react'
+import { Phone, Mail, Instagram } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Form from '../components/Form'
@@ -23,12 +23,28 @@ export default function Contact() {
             title={translations.contactUs.title}
             text={translations.contactUs.text}
             imgPosition="right"
-            img={{ src: '', alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }) }}
+            img={{
+              src: '',
+              alt: interpolate(translations.contactUs.imgAlt, { companyName: CONTACT.companyName }),
+            }}
           >
             <HorizontalContact
               items={[
-                { icon: <Phone size={20} strokeWidth={1.5} />, label: translations.contactUs.phoneLabel, value: CONTACT.phoneNumber },
-                { icon: <Mail size={20} strokeWidth={1.5} />,  label: translations.contactUs.emailLabel,  value: CONTACT.email },
+                {
+                  icon: <Phone size={20} strokeWidth={1.5} />,
+                  label: translations.contactUs.phoneLabel,
+                  value: CONTACT.phoneNumber,
+                },
+                {
+                  icon: <Mail size={20} strokeWidth={1.5} />,
+                  label: translations.contactUs.emailLabel,
+                  value: CONTACT.email,
+                },
+                {
+                  icon: <Instagram size={20} strokeWidth={1.5} />,
+                  label: translations.contactUs.instagram,
+                  value: CONTACT.instagram,
+                },
               ]}
             />
           </ContentMedia>

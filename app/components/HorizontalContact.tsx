@@ -5,6 +5,7 @@ interface HorizontalContactItem {
   icon: ReactNode
   label: string
   value: string
+  href?: string
 }
 
 interface HorizontalContactProps {
@@ -33,23 +34,42 @@ export default function HorizontalContact({ items }: HorizontalContactProps) {
   return (
     <>
       <div className="flex flex-col gap-4">
-        {items.map((item, index) => (
-          <button
-            key={index}
-            onClick={() => handleCopy(item.value)}
-            className="flex items-center gap-3 text-left cursor-pointer group"
-          >
-            <div className="text-gray-400 group-hover:text-black transition-colors">
-              {item.icon}
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-400">{item.label}</span>
-              <span className="text-sm font-bold text-black group-hover:underline">
-                {item.value}
-              </span>
-            </div>
-          </button>
-        ))}
+        {items.map((item, index) =>
+          item.href ? (
+            <a
+              key={index}
+              href={item.href}
+              target="_blank"
+              className="flex items-center gap-3 text-left cursor-pointer group"
+            >
+              <div className="text-gray-400 group-hover:text-black transition-colors">
+                {item.icon}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-400">{item.label}</span>
+                <span className="text-sm font-bold text-black group-hover:underline">
+                  {item.value}
+                </span>
+              </div>
+            </a>
+          ) : (
+            <button
+              key={index}
+              onClick={() => handleCopy(item.value)}
+              className="flex items-center gap-3 text-left cursor-pointer group"
+            >
+              <div className="text-gray-400 group-hover:text-black transition-colors">
+                {item.icon}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-400">{item.label}</span>
+                <span className="text-sm font-bold text-black group-hover:underline">
+                  {item.value}
+                </span>
+              </div>
+            </button>
+          )
+        )}
       </div>
 
       <Toast
