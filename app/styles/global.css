@@ -9,14 +9,19 @@ section[id] {
 }
 
 @keyframes toast-progress {
-  from { width: 100%; }
-  to   { width: 0%; }
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 @theme {
   /* Colors */
   --color-primary: #000000;
   --color-secondary: #ffffff;
+  --color-tertiary: #d1dccf;
   --color-accent: #333333;
   --color-muted: #666666;
   --color-border: #e5e5e5;

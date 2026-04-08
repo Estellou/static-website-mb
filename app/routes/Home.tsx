@@ -117,7 +117,7 @@ export default function Home() {
           />
         </section>
       </main>
-      <footer id="contact">
+      <footer id="contact" className="bg-tertiary">
         <ContentMedia
           title={translations.contactUs.title}
           text={translations.contactUs.text}
