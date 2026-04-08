@@ -77,6 +77,14 @@ export default function Header() {
             {translations.nav.features}
           </a>
           <a
+            href="#projects"
+            className="text-sm text-gray-500 hover:text-black transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {translations.nav.projects}
+          </a>
+
+          <a
             href="#story"
             className="text-sm text-gray-500 hover:text-black transition-colors"
             onClick={() => setMenuOpen(false)}
