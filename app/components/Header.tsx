@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../images/logo.png'
+import logo from '../images/logo2.png'
 import { fr, interpolate } from '../translations'
 import { CONTACT } from '../data/contact'
 

@@ -11,11 +11,17 @@ const circleMask = Buffer.from(
   </svg>`
 )
 
-await sharp('./app/images/logo.png')
+await sharp('./app/images/logo2.png')
   // Fit logo inside circle area with white background
   .resize(INNER, INNER, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
   // Add padding to reach full SIZE
-  .extend({ top: PADDING, bottom: PADDING, left: PADDING, right: PADDING, background: { r: 255, g: 255, b: 255, alpha: 1 } })
+  .extend({
+    top: PADDING,
+    bottom: PADDING,
+    left: PADDING,
+    right: PADDING,
+    background: { r: 255, g: 255, b: 255, alpha: 1 },
+  })
   // Clip to circle (dest-in keeps only pixels inside the mask)
   .composite([{ input: circleMask, blend: 'dest-in' }])
   .png()
